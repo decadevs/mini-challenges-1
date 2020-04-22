@@ -1,9 +1,3 @@
-/**
- * Implement the solution to brackets
- *
- * @param {string} str The string of brackets.
- * @returns {"valid" | "invalid"} Whether or not the string is valid.
- */
 function isValid(str) {
   let stack = [];
 
@@ -23,14 +17,18 @@ function isValid(str) {
 
   newArr.forEach((i) => {
     // Check for the opening brackets
-    if (i === "[" || (i === "{") | (i === "(")) {
+    if (i === "[" || i === "{" || i === "(") {
       stack.push(i);
-    } else if (isMatch(stack[stack.length - 1], i)) {
+    }
+    if (isMatch(stack[stack.length - 1], i)) {
       stack.pop();
     }
   });
 
+  console.log(stack);
+
   // return statement here
+
   if (stack.length > 0) {
     return "invalid";
   } else {
@@ -38,4 +36,7 @@ function isValid(str) {
   }
 }
 
-module.exports = isValid;
+console.log(isValid("[[]]]]]"));
+
+//  "((())(())(())(())"
+//  "]]"
