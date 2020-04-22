@@ -21,10 +21,6 @@ describe("Roman to Numerals solution", () => {
   test("Deductions with I", () => {
     expect(romanToDecimal("IV")).toBe(4);
     expect(romanToDecimal("IX")).toBe(9);
-    expect(romanToDecimal("IL")).toBe(49);
-    expect(romanToDecimal("IC")).toBe(99);
-    expect(romanToDecimal("ID")).toBe(499);
-    expect(romanToDecimal("IM")).toBe(999);
   });
 
   test("Additions with I", () => {
@@ -41,10 +37,8 @@ describe("Roman to Numerals solution", () => {
   });
 
   test("Deductions with X", () => {
-    expect(romanToDecimal("XL")).toBe(49);
-    expect(romanToDecimal("XC")).toBe(99);
-    expect(romanToDecimal("XD")).toBe(499);
-    expect(romanToDecimal("XM")).toBe(999);
+    expect(romanToDecimal("XL")).toBe(40);
+    expect(romanToDecimal("XC")).toBe(90);
   });
 
   test("Additions with X", () => {
