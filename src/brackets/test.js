@@ -18,7 +18,7 @@ describe("Brackets Suite", () => {
     expect(isValid("(())")).toBe("valid");
     expect(isValid("(()()())")).toBe("valid");
     expect(isValid("()()()()()")).toBe("valid");
-    expect(isValid("((())(())(())(())")).toBe("valid");
+    expect(isValid("((())(())(())(()))")).toBe("valid");
 
     expect(isValid("[[]]")).toBe("valid");
     expect(isValid("[][][[]]")).toBe("valid");
