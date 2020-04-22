@@ -37,7 +37,7 @@ describe("Roman to Numerals solution", () => {
   });
 
   test("Deductions with X", () => {
-    expect(romanToDecimal("XL")).toBe(50);
+    expect(romanToDecimal("XL")).toBe(40);
     expect(romanToDecimal("XC")).toBe(90);
   });
 
