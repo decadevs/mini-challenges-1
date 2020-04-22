@@ -15,6 +15,9 @@ function isValid(str){
               || lastEntry === '[' && x !== ']') return 'invalid' 
       }
   }
+
+  if(stack.length > 0) return 'invalid'
+
   return 'valid'
 }
 
