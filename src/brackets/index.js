@@ -11,8 +11,11 @@ function isValid(str){
           stack.push(x)
       }else{
           let lastEntry = stack.pop()
-          if(lastEntry === '(' && x !== ')' || lastEntry === '{' && x !== '}' 
-              || lastEntry === '[' && x !== ']') return 'invalid' 
+          if(lastEntry === '(' && x !== ')' 
+              || lastEntry === '{' && x !== '}' 
+              || lastEntry === '[' && x !== ']'
+              || !lastEntry
+            ) return 'invalid' 
       }
   }
 
