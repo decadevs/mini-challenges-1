@@ -4,6 +4,18 @@
  * @param {string} str The string of brackets.
  * @returns {"valid" | "invalid"} Whether or not the string is valid.
  */
-function isValid(str) {}
+function isValid(str){
+  const stack = [];
+  for(let x of str){
+      if(x == '(' || x == '{' || x =='[' ){
+          stack.push(x)
+      }else{
+          let lastEntry = stack.pop()
+          if(lastEntry === '(' && x !== ')' || lastEntry === '{' && x !== '}' 
+              || lastEntry === '[' && x !== ']') return 'invalid' 
+      }
+  }
+  return 'valid'
+}
 
 module.exports = isValid;
