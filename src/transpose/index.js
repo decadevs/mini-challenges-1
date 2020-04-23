@@ -19,16 +19,5 @@ function transpose(array) {
   return ans;
 }
 
-console.log(transpose([
-  [5, 13, 9],
-  [12, 4, 6],
-  [17, 8, 3],
-  [9, 14, 7],
-  [3, 1, 21],
-]))
-console.log(transpose([
-  [5, 12, 17, 9, 3],
-  [13, 4, 8, 14, 1],
-  [9, 6, 3, 7, 21],
-]))
+
 module.exports = transpose;
