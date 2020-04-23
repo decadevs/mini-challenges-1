@@ -32,10 +32,14 @@ function isValid(str) {
     while(i<str.length){
         if(bracket_box.hasOwnProperty(str[i])){
             if(bracket_validator.length===0){
-
+                bracket_validator.push(bracket_box[str[i]])
             }
             else{
-                
+                bracket_validator.push(bracket_box[str[i]])
+                //check if bracket_validator has more than one str
+                if(bracket_validator.length>1){
+                    
+                }
             }
 
         }
