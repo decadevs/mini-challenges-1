@@ -28,7 +28,6 @@ function isValid(str) {
   if(arr.length !== 0){return "invalid";}
 
   return "valid";
-  
 }
 
 module.exports = isValid;
