@@ -53,6 +53,15 @@ function isValid(str) {
         i+=1;
 
     }
+
+    //if bracket_validator has zero length and str has length greater than zero, then Valid else Invalid
+
+    if(bracket_validator.length===0 && str.length>0){
+        return 'valid'
+    }
+    else{
+        return 'invalid'
+    }
 }
 
 module.exports = isValid;
