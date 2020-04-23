@@ -19,6 +19,12 @@ function transpose(array) {
             //set column size for each row of matB
             matB[j]=new Array(array.length)
         }
+
+        for(let x=0;x<array.length;x++){
+            for(let y=0;y<array[x].length;y++){
+                matB[y][x]=array[x][y]
+            }
+        }
     }
 
 
