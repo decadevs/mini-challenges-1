@@ -31,6 +31,12 @@ function isValid(str) {
 
     while(i<str.length){
         if(bracket_box.hasOwnProperty(str[i])){
+            if(bracket_validator.length===0){
+
+            }
+            else{
+                
+            }
 
         }
         else{
