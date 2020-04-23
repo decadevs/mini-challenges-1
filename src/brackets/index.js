@@ -26,6 +26,9 @@ function isValid(str) {
         ")":{type:"parenthesis",style:"close"}
     }
 
+    const bracket_validator=[];
+    let i = 0;
+
 
  
 
