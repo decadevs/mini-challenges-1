@@ -30,7 +30,13 @@ function isValid(str) {
     let i = 0;
 
     while(i<str.length){
-        
+        if(bracket_box.hasOwnProperty(str[i])){
+
+        }
+        else{
+            return "invalid"
+        }
+
     }
 
 
