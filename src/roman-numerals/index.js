@@ -16,21 +16,35 @@ function romanToDecimal(roman) {
         'M': 1000
     }
 
-    let sum = 0
-    for(let i = romanFigure.length - 1; i > -1; i--){
-        let tempValue
-        if(romanValues[roman.charAt(i-1)] < romanValues[roman.charAt(i)]){
-            tempValue = romanValues[roman.charAt(i)] - romanValues[roman.charAt(i-1)]
-            sum+= tempValue
-            i-=2
-        }else if(romanValues[roman.charAt(i-1)] < romanValues[roman.charAt(i)]){
-            sum+=romanValues[roman.charAt(i)]
+    //if(romanFigure.length == 1) return romanValues[romanFigure]
+    
 
+    let sum = 0 , count = 0
+    for(let i = 0; i < romanFigure.length; i++){
+        let tempValue = 0
+        if(i === romanFigure.length - 1){
+            sum+=romanValues[romanFigure[i]]
+       
+        }else if(romanValues[romanFigure[i]] > romanValues[romanFigure[i+1]]){
+            sum+= romanValues[romanFigure[i]]
+            
+        }else if(romanValues[romanFigure[i]] < romanValues[romanFigure[i+1]]){
+                 tempValue = romanValues[romanFigure[i+1]] - romanValues[romanFigure[i]]
+                    sum += tempValue
+                    i++
+
+        } 
+        else if(romanValues[romanFigure[i]] === romanValues[romanFigure[i+1]]){
+            tempValue = romanValues[romanFigure[i+1]] + romanValues[romanFigure[i]]
+            sum += tempValue
+            i++
         }
+        
     }
-
+    
     return sum
-
+    
 }
+
 
 module.exports = romanToDecimal;
