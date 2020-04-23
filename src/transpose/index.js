@@ -27,6 +27,8 @@ function transpose(array) {
         }
     }
 
+    return matB
+
 
 
     
