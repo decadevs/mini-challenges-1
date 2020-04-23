@@ -11,7 +11,10 @@ function transpose(array) {
     //Having gotten row and column size of array B; 
     //The Transposed array Bji=Aij
 
+    let rowSize=array[0].length
+    let matB=new Array(rowSize)
     
+
 
 
     
