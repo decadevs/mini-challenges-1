@@ -50,14 +50,9 @@ function isValid(str) {
             return "invalid"
         }
 
+        i+=1;
+
     }
-
-
- 
-
-
-
-
 }
 
 module.exports = isValid;
