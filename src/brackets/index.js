@@ -29,6 +29,10 @@ function isValid(str) {
     const bracket_validator=[];
     let i = 0;
 
+    while(i<str.length){
+        
+    }
+
 
  
 
