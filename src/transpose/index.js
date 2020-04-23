@@ -13,7 +13,13 @@ function transpose(array) {
 
     let rowSize=array[0].length
     let matB=new Array(rowSize)
-    
+
+    for(let i = 0;i<array.length;i++){
+        for(let j=0;j<array[i].length;j++){
+            //set column size for each row of matB
+            matB[j]=new Array(array.length)
+        }
+    }
 
 
 
