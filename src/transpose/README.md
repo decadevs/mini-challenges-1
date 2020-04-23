@@ -1,4 +1,4 @@
-# Transpose
+|# Transpose
 
 Given a 2D array A, with row m, and column n, convert all rows to columns and columns to rows.
 
