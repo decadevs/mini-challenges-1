@@ -5,9 +5,9 @@
  * @returns {number} The decimal equivalent.
  */
 function romanToDecimal(roman) {
-  var decimalNumber = 0;
+  let decimalNumber = 0;
 
-  var romanFigures = {
+  let romanFigures = {
     I: 1,
     V: 5,
     X: 10,

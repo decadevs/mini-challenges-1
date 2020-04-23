@@ -5,8 +5,10 @@
  * @returns {"valid" | "invalid"} Whether or not the string is valid.
  */
 function isValid(str) {
-  var openBrackets = [];
-  var closedBrackets = [];
+  let openBrackets = [];
+  let closedBrackets = [];
+  let distinctOpenBrackets = ["(", "[", "{"];
+  let distinctClosedBrackets = [")", "]", "}"];
 
   for (let bracket of str) {
     if (bracket == "(" || bracket == "[" || bracket == "{") {

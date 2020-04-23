@@ -5,18 +5,16 @@
  * @returns {number[]} The transposed array
  */
 function transpose(array) {
-  var newArray = [];
+  let newArray = [];
 
   if (array.length < 10) {
-    // Creating empty arrays for each index
     for (let each of array) {
+      // Creating empty arrays for each index
       while (each.length < 10 && each.length != newArray.length) {
         newArray.push([]);
       }
-    }
 
-    // Pushing the number into the previously created arrays
-    for (let each of array) {
+      // Pushing the number into the previously created arrays
       for (let num in each) {
         newArray[num].push(each[num]);
       }
