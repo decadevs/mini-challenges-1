@@ -38,7 +38,10 @@ function isValid(str) {
                 bracket_validator.push(bracket_box[str[i]])
                 //check if bracket_validator has more than one str
                 if(bracket_validator.length>1){
-                    
+                    if((bracket_validator[bracket_validator.length-1].type===bracket_validator[bracket_validator.length-2].type) && (bracket_validator[bracket_validator.length-1].style==='close' && bracket_validator[bracket_validator.length-2].style==='open')){
+                        bracket_validator.pop()
+                        bracket_validator.pop()
+                    }
                 }
             }
 
