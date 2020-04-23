@@ -6,50 +6,26 @@
  */
 function isValid(str) {
 
-  let matchingOpeningBracket, ch;
+  let brackets = "[]{}()"
   let stack = []
 
-  let openingBrackets = ['[', '{', '(']
-  let closingBrackets = [']', '}', ')']
+  for(let bracket of str) {
+    let bracketsIndex = brackets.indexOf(bracket)
 
-  for (let i = 0; i < str.length; i++) {
-    ch = str[i]
+    if (bracketsIndex === -1){
+      continue
+    }
 
-    if (closingBrackets.indexOf(ch) > -1) {
-      matchingOpeningBracket = openingBrackets[closingBrackets.indexOf(ch)]
-      if (stack.length == 0 || (stack.pop() != matchingOpeningBracket)) {
-        return false
-      }
+    if(bracketsIndex % 2 === 0) {
+      stack.push(bracketsIndex + 1)
     } else {
-      stack.push(ch)
+      if(stack.length === 0 || stack.pop() !== bracketsIndex) {
+        return 'invalid';
+      }
     }
   }
 
-  // var parenCount, bracketCount, curlyCount = 0;
-
-  // for (var i = 0; i < str.Length; i++) {
-
-  //     var checkChar = str[i];
-
-  //     if (checkChar === '(') parenCount++;
-  //     if (checkChar === ')') parenCount--;
-  //     if (checkChar === '[') bracketCount++;
-  //     if (checkChar === ']') bracketCount--;
-  //     if (checkChar === '{') curlyCount++;
-  //     if (checkChar === '}') curlyCount--;
-
-  //     if (parenCount < 0 || bracketCount < 0 || curlyCount < 0)
-  //         return 'invalid';
-  // }
-
-  // if (parenCount != 0) return 'invalid';
-  // if (bracketCount != 0) return 'invalid';
-  // if (curlyCount != 0) return 'invalid';
-  // if (parenCount === 0) return 'valid';
-  // if (bracketCount === 0) return 'valid';
-  // if (curlyCount === 0) return 'valid';
   return stack.length === 0 ? 'valid' : 'invalid';
-  // return 'valid';
 
 }
 
