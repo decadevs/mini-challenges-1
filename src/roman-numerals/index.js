@@ -19,12 +19,12 @@ function romanToDecimal(roman) {
     let sum = 0
     for(let i = romanFigure.length - 1; i > -1; i--){
         let tempValue
-        if(romanValues[charAt(i-1)] < romanValues[charAt(i)]){
-            tempValue = romanValues[charAt(i)] - romanValues[charAt(i-1)]
+        if(romanValues[roman.charAt(i-1)] < romanValues[roman.charAt(i)]){
+            tempValue = romanValues[roman.charAt(i)] - romanValues[roman.charAt(i-1)]
             sum+= tempValue
             i-=2
-        }else if(romanValues[charAt(i-1)] < romanValues[charAt(i)]){
-            sum+=romanValues[charAt(i)]
+        }else if(romanValues[roman.charAt(i-1)] < romanValues[roman.charAt(i)]){
+            sum+=romanValues[roman.charAt(i)]
 
         }
     }
