@@ -6,38 +6,35 @@
  */
 function isValid(str) {
     let box = 0, curl = 0, curve = 0;
-    let boxClose = false, curlClose = false, curveClose = false;
+    let boxClose = true, curlClose = true, curveClose = true;
 
-    //str.split();
-    str.split('').forEach(element => {
+    str.split('').forEach((element, i, arr) => {
+        let prev = arr[i-1];
 
-        if (element == "[" || element == "]") {
-
-        } else if (element == "{" || element == "}") {
-
-        } else if (element == "(" || element == ")") {
-
-        }
-
-        switch(element){
-            case "{":
-                curl +=1
-                break;
-            case "}":
-                curl -=1
-                break;
-            case "[":
-                box +=1
-                break;
-            case "]":
-                box -=1
-                break;
-            case "(":
-                curve +=1
-                break;
-            case ")":
-                curve -=1
-                break;
+        if (element == "[") {
+            box += 1
+            boxClose = false;
+        } else if (element == "]"){
+            if(prev == "{" || prev == "("){
+                return "invalid";
+            }
+            box -= 1
+        } else if (element == "{") {
+            curl += 1
+            curlClose = false;
+        } else if (element == "}") {
+            if (prev == "[" || prev == "(") {
+              return "invalid";
+            }
+            curl -= 1
+        } else if (element == "(") {
+            curve += 1
+            curveClose = false;
+        } else if (element == ")") {
+            if (prev == "{" || prev == "[") {
+              return "invalid";
+            }
+            curve -= 1
         }
     });
 
