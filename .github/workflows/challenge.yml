@@ -1,6 +1,6 @@
 name: Challenges
 
-on: [push]
+on: [push, pull_request]
 
 jobs:
   server:
