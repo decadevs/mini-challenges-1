@@ -6,6 +6,7 @@
   "scripts": {
     "test": "jest"
   },
+  "private": true,
   "keywords": [],
   "author": "",
   "license": "ISC",
