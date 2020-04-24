@@ -39,6 +39,7 @@ function romanToDecimal(roman) {
     let greater_3=0;
     let j=0
     let x =0
+    let z=0
     let evaluator=0 //to evaluate sums of symbols after comparision
     let sum_tri=0 //to sum related symbols with count equal to three
     let sum_dbl=0 //to sum related symbols with count equal to two
@@ -82,6 +83,28 @@ function romanToDecimal(roman) {
                 decimalBox.push(sum_tri)
                 j+=3
             }
+
+            else if(roman_numeral_map[roman[j]]===2){
+                while(z<2){
+                    sum_dbl+=roman_numeral_set[roman[j]]
+                    z+=1
+                }
+
+                //check if double is a valid double
+                //valid doubles are those whose sum_dbl is not found among values of roman numeral set
+                let is_valid_double=Object.keys(roman_numeral_set).every(function(k){
+                    return roman_numeral_set[k]!==sum_dbl
+                })
+
+                if(is_valid_double){
+                    decimalBox.push(sum_dbl)
+                }
+
+                j+=2
+            }
+
+            
+
         }
 
     }
