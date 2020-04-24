@@ -41,6 +41,7 @@ function romanToDecimal(roman) {
     let x =0
     let z=0
     let sum=0
+    let total=0
     let evaluator=0 //to evaluate sums of symbols after comparision
     let sum_tri=0 //to sum related symbols with count equal to three
     let sum_dbl=0 //to sum related symbols with count equal to two
@@ -119,21 +120,16 @@ function romanToDecimal(roman) {
                 return sum
             }
 
-
-
-
         }
 
+        if(decimalBox.length>0){
+            sum=decimalBox.reduce(function(total,current){
+                return total+current
+            },)
+        }
     }
 
-
-
-
-
-
-    
-    
-
-}
+        return sum
+    }
 
 module.exports = romanToDecimal;
