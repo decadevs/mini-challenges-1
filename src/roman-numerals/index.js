@@ -36,6 +36,7 @@ function romanToDecimal(roman) {
     }
 
     let roman_numeral_map={}
+    let greater_3=0;
 
     for(let i = 0; i<roman.length;i++){
         if(!roman_numeral_map.hasOwnProperty(roman[i])){
@@ -45,7 +46,19 @@ function romanToDecimal(roman) {
             roman_numeral_map[roman[i]]+=1
         }
     }
+
+    for (key in roman_numeral_map){
+        if(roman_numeral_map[key]>3){
+            greater_3+=1
+        }
+        else{
+            greater_3+=0
+        }
+    }
+
     
+
+
 
 
     
