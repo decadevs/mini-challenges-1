@@ -38,12 +38,6 @@ function romanToDecimal(roman) {
     let roman_numeral_map={}
     let greater_3=0;
     let j=0
-    let x =0
-    let z=0
-    
-    let evaluator=0 //to evaluate sums of symbols after comparision
-    let sum_tri=0 //to sum related symbols with count equal to three
-    let sum_dbl=0 //to sum related symbols with count equal to two
     let decimalBox=[] //to keep the evaluated sums for later total sum up
 
 
@@ -52,27 +46,43 @@ function romanToDecimal(roman) {
             roman_numeral_map[roman[i]]=1
         }
         else{
+
+            if(roman[i]===roman[i-1] && roman_numeral_map[roman[i]]!==3){
             roman_numeral_map[roman[i]]+=1
+            }
         }
     }
 
-    for (key in roman_numeral_map){
-        if(roman_numeral_map[key]>3){
-            greater_3+=1
-        }
-        else{
-            greater_3+=0
-        }
-    }
+    // for (key in roman_numeral_map){
+    //     if(roman_numeral_map[key]>3){
+    //         greater_3+=1
+    //     }
+    //     else{
+    //         greater_3+=0
+    //     }
+    // }
 
-    if(greater_3===0){
         while(j<roman.length){
+             let sum_tri=0 //to sum related symbols with count equal to three
+            let sum_dbl=0 //to sum related symbols with count equal to two
+            let evaluator = 0 //to evaluate sums of symbols after comparision
             if(roman.length===1){
                 evaluator=roman_numeral_set[roman[j]]
                     decimalBox.push(evaluator)
+                    
                     j+=1;
             }
+
+        if(j+1===roman.length){
+            evaluator = roman_numeral_set[roman[j]]
+            decimalBox.push(evaluator)
+
+            j += 1;
+        }
+
         if(j+1<roman.length){
+            
+
             if(roman_numeral_set[roman[j+1]]>roman_numeral_set[roman[j]]){
                 if(constraint[roman[j]].includes(roman[j+1])){
                     evaluator=roman_numeral_set[roman[j+1]]-roman_numeral_set[roman[j]]
@@ -82,6 +92,7 @@ function romanToDecimal(roman) {
             }
 
             else if(roman_numeral_map[roman[j]]===3){
+                let x = 0
                 while(x<3){
                     sum_tri+=roman_numeral_set[roman[j]]
                     x+=1
@@ -92,18 +103,24 @@ function romanToDecimal(roman) {
             }
 
             else if(roman_numeral_map[roman[j]]===2){
+                
+                let z = 0
                 while(z<2){
+                    
                     sum_dbl+=roman_numeral_set[roman[j]]
                     z+=1
                 }
+                
 
                 //check if double is a valid double
                 //valid doubles are those whose sum_dbl is not found among values of roman numeral set
                 let is_valid_double=Object.keys(roman_numeral_set).every(function(k){
                     return roman_numeral_set[k]!==sum_dbl
                 })
+                
 
                 if(is_valid_double){
+                    
                     decimalBox.push(sum_dbl)
                 }
 
@@ -122,9 +139,6 @@ function romanToDecimal(roman) {
                 j+=1;
             }
         }
-        else{
-            return sum
-        }
 
         }
 
@@ -133,10 +147,10 @@ function romanToDecimal(roman) {
                 return total+current
             },)
         }
-        
-    }
 
         return sum
     }
+
+    
 
 module.exports = romanToDecimal;
