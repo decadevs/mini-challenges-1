@@ -109,6 +109,12 @@ function romanToDecimal(roman) {
                 j+=1
             }
 
+            else if(roman_numeral_set[roman[j+1]]<roman_numeral_set[roman[j]] && roman_numeral_map[roman[j+1]]<2){
+                evaluator=roman_numeral_set[roman[j]]
+                decimalBox.push(evaluator)
+                j+=1;
+            }
+
 
 
         }
