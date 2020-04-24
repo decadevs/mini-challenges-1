@@ -14,7 +14,8 @@ describe("Brackets Suite", () => {
     expect(isValid("{)")).toBe("invalid");
   });
 
-  test("Single Character - valid inputs", () => {
+  test("Single Character - valid inputs", () => 
+  {
     expect(isValid("(())")).toBe("valid");
     expect(isValid("(()()())")).toBe("valid");
     expect(isValid("()()()()()")).toBe("valid");
