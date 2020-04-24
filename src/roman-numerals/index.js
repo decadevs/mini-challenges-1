@@ -40,7 +40,6 @@ function romanToDecimal(roman) {
     let j=0
     let x =0
     let z=0
-    let sum=0
     
     let evaluator=0 //to evaluate sums of symbols after comparision
     let sum_tri=0 //to sum related symbols with count equal to three
@@ -68,6 +67,11 @@ function romanToDecimal(roman) {
 
     if(greater_3===0){
         while(j<roman.length){
+            if(roman.length===1){
+                evaluator=roman_numeral_set[roman[j]]
+                    decimalBox.push(evaluator)
+                    j+=1;
+            }
         if(j+1<roman.length){
             if(roman_numeral_set[roman[j+1]]>roman_numeral_set[roman[j]]){
                 if(constraint[roman[j]].includes(roman[j+1])){
@@ -118,14 +122,14 @@ function romanToDecimal(roman) {
                 j+=1;
             }
         }
-            else{
-                return sum
-            }
+        else{
+            return sum
+        }
 
         }
 
         if(decimalBox.length>0){
-            sum=decimalBox.reduce(function(total,current){
+            var sum=decimalBox.reduce(function(total,current){
                 return total+current
             },)
         }
