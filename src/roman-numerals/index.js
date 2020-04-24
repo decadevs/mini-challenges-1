@@ -103,7 +103,13 @@ function romanToDecimal(roman) {
                 j+=2
             }
 
-            
+            else if(roman_numeral_set[roman[j+1]]<roman_numeral_set[roman[j]] && roman_numeral_map[roman[j+1]]>1){
+                evaluator=roman_numeral_set[roman[j]]
+                decimalBox.push(evaluator)
+                j+=1
+            }
+
+
 
         }
 
