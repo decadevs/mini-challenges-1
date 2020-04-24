@@ -63,6 +63,15 @@ function romanToDecimal(roman) {
     }
 
     if(greater_3===0){
+        while(j<roman.length){
+            if(roman_numeral_set[roman[j+1]]>roman_numeral_set[roman[j]]){
+                if(constraint[roman[j]].includes(roman[j+1])){
+                    evaluator=roman_numeral_set[roman[j+1]]-roman_numeral_set[roman[j]]
+                    decimalBox.push(evaluator)
+                    j+=2;
+                }
+            }
+        }
 
     }
 
