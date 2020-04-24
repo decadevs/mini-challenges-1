@@ -1,0 +1,19 @@
+# top-most EditorConfig file
+root = true
+
+# Unix-style newlines with a newline ending every file
+[*]
+charset = utf-8
+indent_size = 2
+end_of_line = lf
+indent_style = space
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+[node_modules/**]
+charset = unset
+indent_size = unset
+end_of_line = unset
+indent_style = unset
+insert_final_newline = unset
+trim_trailing_whitespace = unset
