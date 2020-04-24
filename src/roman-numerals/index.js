@@ -18,6 +18,24 @@ function romanToDecimal(roman) {
     //if next symbol less than previous symbol and count of next symbol less than 2: keep previous symbol
     //for cases where previous symbol is kept, loop counts by 1 for other cases where you need to compair pair, loop counts by 2
 
+    const roman_numeral_set = {
+        "I": 1,
+        "V": 5,
+        "X": 10,
+        "L": 50,
+        "C": 100,
+        "D": 500,
+        "M": 1000
+        }
+
+    //define the constraint- if :I comes before V,X, :X comes before L,C :C comes before D,M
+    const constraint = {
+        "I": ["V", "X"],
+        "X": ["L", "C"],
+        "C": ["D", "M"]
+    }
+    
+    
 
 }
 
