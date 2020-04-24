@@ -34,6 +34,20 @@ function romanToDecimal(roman) {
         "X": ["L", "C"],
         "C": ["D", "M"]
     }
+
+    let roman_numeral_map={}
+
+    for(let i = 0; i<roman.length;i++){
+        if(!roman_numeral_map.hasOwnProperty(roman[i])){
+            roman_numeral_map[roman[i]]=1
+        }
+        else{
+            roman_numeral_map[roman[i]]+=1
+        }
+    }
+    
+
+
     
     
 
