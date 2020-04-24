@@ -37,6 +37,12 @@ function romanToDecimal(roman) {
 
     let roman_numeral_map={}
     let greater_3=0;
+    let j=0
+    let evaluator=0 //to evaluate sums of symbols after comparision
+    let sum_tri=0 //to sum related symbols with count equal to three
+    let sum_dbl=0 //to sum related symbols with count equal to two
+    let decimalBox=[] //to keep the evaluated sums for later total sum up
+
 
     for(let i = 0; i<roman.length;i++){
         if(!roman_numeral_map.hasOwnProperty(roman[i])){
