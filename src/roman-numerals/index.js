@@ -38,6 +38,7 @@ function romanToDecimal(roman) {
     let roman_numeral_map={}
     let greater_3=0;
     let j=0
+    let x =0
     let evaluator=0 //to evaluate sums of symbols after comparision
     let sum_tri=0 //to sum related symbols with count equal to three
     let sum_dbl=0 //to sum related symbols with count equal to two
@@ -70,6 +71,16 @@ function romanToDecimal(roman) {
                     decimalBox.push(evaluator)
                     j+=2;
                 }
+            }
+
+            else if(roman_numeral_map[roman[j]]===3){
+                while(x<3){
+                    sum_tri+=roman_numeral_set[roman[j]]
+                    x+=1
+                }
+
+                decimalBox.push(sum_tri)
+                j+=3
             }
         }
 
