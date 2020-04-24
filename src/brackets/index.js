@@ -10,8 +10,9 @@ function isValid(str) {
 
   for(let bracket of str){
     let bracketIdx = collection.indexOf(bracket);
+    console.log(bracketIdx);
     if(bracketIdx % 2 === 0) stack.push(bracketIdx);
-    else if(stack.pop() !== bracketIdx) return "Invalid";
+    else if(stack.pop() !== bracketIdx-1) return "invalid";
   }
   return "valid";
 }

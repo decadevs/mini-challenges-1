@@ -17,35 +17,30 @@ function romanToDecimal(roman) {
   let decimal = 0; let cumm;
   for(let i = 0; i<roman.length; i++){
       cumm = collection[roman[i]];
-      if(roman[i] === 'V' && roman[i-1] === 'I' ) {
-        cumm = collection[roman[i]] - 2*collection[roman[i-1]];
-      }
-      if(roman[i] === 'X' && roman[i-1] === 'I') {
-        cumm = collection[roman[i]] - 2*collection[roman[i-1]];
-      }
-
-    if(roman[i] === 'L' && roman[i-1] === 'X' ) {
+      if(checkCharBefore(roman,i)){
       cumm = collection[roman[i]] - 2*collection[roman[i-1]];
     }
-    if(roman[i] === 'C' && roman[i-1] === 'X') {
-      cumm = collection[roman[i]] - 2*collection[roman[i-1]];
-    }
-    if(roman[i] === 'D' && roman[i-1] === 'X') {
-      cumm = collection[roman[i]] - 2*collection[roman[i-1]];
-    }
-    if(roman[i] === 'M' && roman[i-1] === 'X') {
-      cumm = collection[roman[i]] - 2*collection[roman[i-1]];
-    }
-
-    if(roman[i] === 'D' && roman[i-1] === 'C' ) {
-      cumm = collection[roman[i]] - 2*collection[roman[i-1]];
-    }
-    if(roman[i] === 'M' && roman[i-1] === 'C') {
-      cumm = collection[roman[i]] - 2*collection[roman[i-1]];
-    }
-
     decimal +=cumm;
   }
+
+  function checkCharBefore(str,pos){
+    let curChar = str.charAt(pos);
+    let prevChar = str.charAt(pos-1);
+    if((curChar === 'C' || curChar === 'L' ||
+   curChar === 'D' || curChar === 'M' ||
+    curChar === 'V' || curChar === 'X') &&
+    prevChar === 'I' ) return true;
+
+    if((curChar === 'M' || curChar === 'L' ||
+    curChar === 'C' || curChar === 'D') &&
+    prevChar === 'X' ) return true;
+
+    if((curChar === 'M' || curChar === 'D') &&
+    prevChar === 'C' ) return true;
+
+    return false;
+  }
+
   return decimal;
 }
 

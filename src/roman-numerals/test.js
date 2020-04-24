@@ -41,10 +41,10 @@ describe("Roman to Numerals solution", () => {
   });
 
   test("Deductions with X", () => {
-    expect(romanToDecimal("XL")).toBe(49);
-    expect(romanToDecimal("XC")).toBe(99);
-    expect(romanToDecimal("XD")).toBe(499);
-    expect(romanToDecimal("XM")).toBe(999);
+    expect(romanToDecimal("XL")).toBe(40);
+    expect(romanToDecimal("XC")).toBe(90);
+    expect(romanToDecimal("XD")).toBe(490);
+    expect(romanToDecimal("XM")).toBe(990);
   });
 
   test("Additions with X", () => {
