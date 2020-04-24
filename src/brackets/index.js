@@ -5,10 +5,8 @@
  * @returns {"valid" | "invalid"} Whether or not the string is valid.
  */
 function isValid(str) {
-    let char=["(", ")", "[", "]", "{","}"]
+let char=["(", ")", "[", "]", "{","}"]
 let a=[...str]
-let a1=a.slice(0,a.length/2)
-let a2=a.slice(a.length/2)
 let b1=["(","[","{"]
 let b2=[")","]","}"]
 let c1=[]
@@ -23,15 +21,10 @@ if(b2.indexOf(a[i])>-1){
 }
 if(char.indexOf(a[i])%2==0){
     let p1=i
-    p1
     let p2=a[i+2]
     let p3=a[i+1]
-    p2
-    p3
-    //"{{{{{{{{{{{{}}}}}}}}}}}()[}]"
     if(p2==char[char.indexOf(a[i])+1]&&p3!=char[char.indexOf(a[i])+1]&&p3!==a[i]){
       u.push("yes")
-      //v.push(i)
     }
   }
 }
