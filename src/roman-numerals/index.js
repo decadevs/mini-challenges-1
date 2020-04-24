@@ -68,6 +68,7 @@ function romanToDecimal(roman) {
 
     if(greater_3===0){
         while(j<roman.length){
+        if(j+1<roman.length){
             if(roman_numeral_set[roman[j+1]]>roman_numeral_set[roman[j]]){
                 if(constraint[roman[j]].includes(roman[j+1])){
                     evaluator=roman_numeral_set[roman[j+1]]-roman_numeral_set[roman[j]]
@@ -116,6 +117,7 @@ function romanToDecimal(roman) {
                 decimalBox.push(evaluator)
                 j+=1;
             }
+        }
             else{
                 return sum
             }
@@ -127,6 +129,7 @@ function romanToDecimal(roman) {
                 return total+current
             },)
         }
+        
     }
 
         return sum
