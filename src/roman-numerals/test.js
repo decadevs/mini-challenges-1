@@ -33,7 +33,7 @@ describe("Roman to Numerals solution", () => {
     expect(romanToDecimal("DI")).toBe(501);
     expect(romanToDecimal("DII")).toBe(502);
     expect(romanToDecimal("MI")).toBe(1001);
-    expect(romanToDecimal("MIIII")).toBe(1004);
+    expect(romanToDecimal("MIV")).toBe(1004);
   });
 
   test("Deductions with X", () => {
