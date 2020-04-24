@@ -44,7 +44,7 @@ describe("Roman to Numerals solution", () => {
   test("Additions with X", () => {
     expect(romanToDecimal("LXX")).toBe(70);
     expect(romanToDecimal("CX")).toBe(110);
-    expect(romanToDecimal("DXXXX")).toBe(540);
+    expect(romanToDecimal("DXL")).toBe(540);
     expect(romanToDecimal("MXXX")).toBe(1030);
   });
 
