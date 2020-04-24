@@ -10,13 +10,14 @@ function romanToDecimal(roman) {
 
     //declare roman numeral set of possible symbol and their decimal equiv
     //define the constraints of roman numeral manipulation
-    //no any symbol in roman should have count above 3
+    //no any  successive symbol in roman numeral should have count above 3
     //if next symbol greater than previous symbol: subtract previous symbol from next symbol
     //if a symbol has count === 3 : sum up together as triple symbol sum
     //if a symbol has count ===2 : sum up together as double symbol sum
     //if next symbol less than previous symbol and count of next symbol greater than 1: keep only previous symbol
     //if next symbol less than previous symbol and count of next symbol less than 2: keep previous symbol
     //for cases where previous symbol is kept, loop counts by 1 for other cases where you need to compair pair, loop counts by 2
+    //for cases where successive counts is 3, loop count by 3
 
     const roman_numeral_set = {
         "I": 1,
