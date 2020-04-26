@@ -8,7 +8,7 @@ function transpose(array) {
     const newArray = []
     for(let arr =0; arr < array[0].length; arr++){
         newArray.push([])
-    }jb
+    }
 
     for( let i = 0; i < array.length; i++){
         for(let x = 0; x < newArray.length; x++){
