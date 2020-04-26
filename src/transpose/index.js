@@ -110,16 +110,6 @@ function transpose(array) {
         newArray.push(anotherArray8);
         newArray.push(anotherArray9);
         newArray.push(anotherArray10);
-        newArray.push(anotherArray1);
-        newArray.push(anotherArray2);
-        newArray.push(anotherArray3);
-        newArray.push(anotherArray4);
-        newArray.push(anotherArray5);
-        newArray.push(anotherArray6);
-        newArray.push(anotherArray7);
-        newArray.push(anotherArray8);
-        newArray.push(anotherArray9);
-        newArray.push(anotherArray10);
     } else if (lengthOfInnerArray === 11) {
         newArray.push(anotherArray1);
         newArray.push(anotherArray2);
