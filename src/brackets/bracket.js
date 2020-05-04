@@ -70,4 +70,3 @@ function isValid(str) {
 }
 
 // module.exports = isValid;
-console.log(isValid("(()()())"))
