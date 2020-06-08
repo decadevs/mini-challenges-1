@@ -45,17 +45,5 @@ function romanToDecimal(roman) {
 
 };
 
-console.log(romanToDecimal("I")); //toBe(1)
-console.log(romanToDecimal("II")); //toBe(2)
-console.log(romanToDecimal("IV")); //toBe(4)
-console.log(romanToDecimal("III")); //toBe(3)
-console.log(romanToDecimal("XL")); //toBe(40)
-console.log(romanToDecimal("LXX")); //toBe(70)
-console.log(romanToDecimal("XXIX")); //toBe(29)
-console.log(romanToDecimal("CXLIV")); //toBe(144)
-console.log(romanToDecimal("MDXC")); //toBe(1590)
-console.log(romanToDecimal("CXCV"));
-
-
 
 module.exports = romanToDecimal;
