@@ -4,6 +4,9 @@
  * @param {string} str The string of brackets.
  * @returns {"valid" | "invalid"} Whether or not the string is valid.
  */
+
+
+
 function isValid(str) {
     let result = [];
     let pare = {
@@ -30,6 +33,7 @@ function isValid(str) {
     };
 
     return 'valid';
+
 }
 
 module.exports = isValid;

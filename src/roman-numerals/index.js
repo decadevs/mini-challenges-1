@@ -5,7 +5,7 @@
  * @returns {number} The decimal equivalent.
  */
 function romanToDecimal(roman) {
-    var decimal = {
+    let decimal = {
 
         M: 1000,
         D: 500,
@@ -16,18 +16,17 @@ function romanToDecimal(roman) {
         I: 1
     };
 
-    var result = 0;
-    var input = roman.split('');
+    let result = 0;
+    let input = roman.split('');
 
-    for (var i = 0; i < input.length; i++) {
-        var cur = decimal[input[i]];
-        var nex = decimal[input[i + 1]];
+    for (let i = 0; i < input.length; i++) {
+        let current = decimal[input[i]];
+        let next = decimal[input[i + 1]];
 
-        if (cur < nex) {
-            result += nex - cur;
-            i++;
+        if (current < next) {
+            result -= current;
         } else {
-            result += cur;
+            result += current;
         }
 
 

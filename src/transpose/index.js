@@ -5,16 +5,16 @@
  * @returns {number[]} The transposed array
  */
 function transpose(array) {
-    const res = [];
+    const result = [];
     for (let j = 0; j < array[0].length; j++) {
-        res[j] = new Array(array.length);
+        result[j] = Array.from({ length: array.length });
     }
     for (let i = 0; i < array.length; i++) {
         for (let j = 0; j < array[0].length; j++) {
-            res[j][i] = array[i][j];
+            result[j][i] = array[i][j];
         }
     }
-    return res;
+    return result;
 }
 
 module.exports = transpose;
