@@ -5,51 +5,34 @@
  * @returns {number} The decimal equivalent.
  */
 
-    const romanToDecimal = (roman) => {
-        let arr = roman.split('');
-        let decimal = 0;
-      for(let i = 0; i < arr.length; i++) {
-        switch (arr[i]) {
-          case 'C':
-            if(arr[i+1] === 'M' || arr[i+1] === 'D') {
-              decimal -= 100;
-            }else{
-              decimal += 100;
-            }
-            break;
-          case 'D':
-            decimal += 500;
-            break;
-          case 'I':
-            if(arr[i+1] === 'V' || arr[i+1] === 'X') {
-              decimal -= 1;
-            }else{
-              decimal += 1;
-            }
-            break;
-          case 'L':
-            decimal += 50;
-            break;
-          case 'M':
-            decimal += 1000;
-            break;
-          case 'V':
-            decimal += 5;
-            break;
-          case 'X':
-            if(arr[i+1] === 'L' || arr[i+1] === 'C') {
-              decimal -= 10;
-            }else{
-              decimal += 10;
-            }
-            break;
-          default:
-            decimal += 0;
-        }
-    
-      }
-    
-      return decimal;
+const romanToDecimal = roman => {
+  let arrOfNumerals = roman.split('');
+  let collection = {
+    'I': 1,
+    'V': 5,
+    'X': 10,
+    'L': 50,
+    'C': 100,
+    'D': 500,
+    'M': 1000
+  }
+  let totalOfDecimal = 0;
+
+  for (let i = 0; i < arrOfNumerals.length; i++) {
+    const currentElem = arrOfNumerals[i];
+    const currentValue = collection[currentElem];
+
+    const nextElem = arrOfNumerals[i + 1];
+    const nextValue = collection[nextElem];
+
+    if (currentValue < nextValue) {
+      totalOfDecimal -= currentValue
+    } else {
+      totalOfDecimal += currentValue
     }
+  }
+
+  return totalOfDecimal;
+}
 
 module.exports = romanToDecimal;

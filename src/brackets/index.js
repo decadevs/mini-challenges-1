@@ -6,27 +6,26 @@
  */
 
 const isValid = (str) => {
-    let brackets = "[]{}()"
-  let stack = []
+  const bracketMatch = {
+    '[': ']',
+    '{': '}',
+    '(': ')'
+  };
+  const temporaryStore = [];
 
-  for(let bracket of str) {
-    let bracketsIndex = brackets.indexOf(bracket)
-    // console.log(bracketsIndex, '=====>bracketindex')
-
-    if (bracketsIndex === -1){
-      continue
-    }
-
-    if(bracketsIndex % 2 === 0) {
-      stack.push(bracketsIndex + 1)
+  for (bracket of str) {
+    if (bracketMatch[bracket]) {
+      temporaryStore.push(bracket);
     } else {
-      if(stack.length === 0 || stack.pop() !== bracketsIndex) {
-        return 'invalid';
+      const pushedOutBracket = temporaryStore.pop();
+
+      if (bracketMatch[pushedOutBracket] !== bracket) {
+        return 'invalid'
       }
     }
   }
 
-  return stack.length === 0 ? 'valid' : 'invalid';
+  return temporaryStore.length == 0 ? 'valid' : 'invalid'
 }
 
 module.exports = isValid;
