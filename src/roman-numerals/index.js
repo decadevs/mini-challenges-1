@@ -15,7 +15,7 @@ const romanToDecimal = roman => {
     'C': 100,
     'D': 500,
     'M': 1000
-  }
+  };
   let totalOfDecimal = 0;
 
   for (let i = 0; i < arrOfNumerals.length; i++) {
@@ -29,10 +29,10 @@ const romanToDecimal = roman => {
       totalOfDecimal -= currentValue
     } else {
       totalOfDecimal += currentValue
-    }
-  }
+    };
+  };
 
   return totalOfDecimal;
-}
+};
 
 module.exports = romanToDecimal;

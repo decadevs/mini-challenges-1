@@ -21,11 +21,11 @@ const isValid = (str) => {
 
       if (bracketMatch[pushedOutBracket] !== bracket) {
         return 'invalid'
-      }
-    }
-  }
+      };
+    };
+  };
 
   return temporaryStore.length == 0 ? 'valid' : 'invalid'
-}
+};
 
 module.exports = isValid;
