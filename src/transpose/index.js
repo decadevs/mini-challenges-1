@@ -6,18 +6,18 @@
  */
 function transpose(array) {
 
-        let newArray = [];
+        let arrayTranspose = [];
         for(let i = 0; i < array.length && i <= 9; i++){
-            newArray.push([]);
+            arrayTranspose.push([]);
         };
     
         for(let i = 0; i < array.length  && i <= 9; i++){
             for(let j = 0; j < array[i].length && j <= 9; j++){
-                newArray[j].push(array[i][j]);
+                arrayTranspose[j].push(array[i][j]);
             };
         };
     
-        return newArray;
+        return arrayTranspose;
 }
 
 module.exports = transpose;
