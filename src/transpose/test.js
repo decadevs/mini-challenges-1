@@ -15,7 +15,7 @@ describe("Transposed Array", () => {
 
   test("Testing with 3x2 array", () => {
     const arr = [
-      [1, 7, 9],
+      [1, 7, 9],~
       [2, 3, 5],
     ];
 
