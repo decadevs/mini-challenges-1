@@ -17,33 +17,35 @@ function romanToDecimal(roman) {
     }
 
     //if(romanFigure.length == 1) return romanValues[romanFigure]
-    
 
-    let sum = 0 , count = 0
-    for(let i = 0; i < romanFigure.length; i++){
+
+    let sum = 0;
+    for (let i = 0; i < romanFigure.length; i++) {
         let tempValue = 0
-        if(i === romanFigure.length - 1){
-            sum+=romanValues[romanFigure[i]]
-       
-        }else if(romanValues[romanFigure[i]] > romanValues[romanFigure[i+1]]){
-            sum+= romanValues[romanFigure[i]]
-            
-        }else if(romanValues[romanFigure[i]] < romanValues[romanFigure[i+1]]){
-                 tempValue = romanValues[romanFigure[i+1]] - romanValues[romanFigure[i]]
-                    sum += tempValue
-                    i++
+        if (i === romanFigure.length - 1) {
+            sum += romanValues[romanFigure[i]]
+        }
 
-        } 
-        else if(romanValues[romanFigure[i]] === romanValues[romanFigure[i+1]]){
-            tempValue = romanValues[romanFigure[i+1]] + romanValues[romanFigure[i]]
+        if (romanValues[romanFigure[i]] > romanValues[romanFigure[i + 1]]) {
+            sum += romanValues[romanFigure[i]]
+        }
+
+        if (romanValues[romanFigure[i]] < romanValues[romanFigure[i + 1]]) {
+            tempValue = romanValues[romanFigure[i + 1]] - romanValues[romanFigure[i]]
             sum += tempValue
             i++
         }
-        
+
+        if (romanValues[romanFigure[i]] === romanValues[romanFigure[i + 1]]) {
+            tempValue = romanValues[romanFigure[i + 1]] + romanValues[romanFigure[i]]
+            sum += tempValue
+            i++
+        }
+
     }
-    
+
     return sum
-    
+
 }
 
 
