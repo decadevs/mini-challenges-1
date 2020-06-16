@@ -17,11 +17,31 @@ function romanToDecimal(roman) {
 
   let array = roman.split("")
   let total = 0
+  let current
+  let currentValue
+  let next
+  let nextValue
+
   for(let i = 0; i < array.length; i++) {
-    total += conversion[array[i]]
+    // total += conversion[array[i]]
+    current = array[i]
+    currentValue = conversion[current]
+
+    next = array[i + 1]
+    nextValue = conversion[[next]]
+
+    if(currentValue >= nextValue) {
+      total += (currentValue)
+    } else if (currentValue < nextValue) {
+      total -= (currentValue)
+    } else if (currentValue && !nextValue) {
+      total += currentValue
+    }
   }
   return total
+
+
 }
-console.log(romanToDecimal("IXXX"))
+console.log(romanToDecimal("CD"))
 
 module.exports = romanToDecimal;
