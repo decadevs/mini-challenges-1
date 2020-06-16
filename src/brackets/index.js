@@ -5,12 +5,18 @@
  * @returns {"valid" | "invalid"} Whether or not the string is valid.
  */
 function isValid(str) {
-  const collections = []
-  for(let character of str) {
-    if(character === '(' || character === '{' || character === '['){
-      collections.push(character)
+  const stack = []
+  for(let x of str) {
+    if(x == '(' || x == '{' || x == '['){
+      stack.push(x)
+    }
+    else {
+      let lastEntry = stack.pop()
+      if(lastEntry === '(' && x !== ')' || lastEntry === '{' && x !== '}' || lastEntry === '[' && x !== ']' || !lastEntry) return "invalid"
     }
   }
+  if(stack.length > 0) return "invalid"
+  return "valid"
 }
 
 module.exports = isValid;
