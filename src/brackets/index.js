@@ -6,22 +6,26 @@
  */
 function isValid(str){
   const stack = [];
-  for(let x of str){
-      if(x == '(' || x == '{' || x =='[' ){
-          stack.push(x)
-      }else{
-          let lastEntry = stack.pop()
-          if(lastEntry === '(' && x !== ')' 
-              || lastEntry === '{' && x !== '}' 
-              || lastEntry === '[' && x !== ']'
-              || !lastEntry
-            ) return 'invalid' 
-      }
+
+const brackets = {
+      '(' : ')',
+      '{': '}',
+      '[' : ']'
   }
 
-  if(stack.length > 0) return 'invalid'
+for(bracket of str){
+  if(brackets[bracket]){
+      stack.push(bracket);
+  }else{
+      let lastEntry = stack.pop();
+      if(brackets[lastEntry] !== bracket){
+          return 'invalid';
+      }
+  }
+}
+if(stack.length > 0) return 'invalid';
+return 'valid';
 
-  return 'valid'
 }
 
 module.exports = isValid;
