@@ -4,7 +4,6 @@ Given a Roman numeral less than `4,000`, convert it to a decimal number. This [W
 
 Roman numerals consist of the following symbols:
 
-```
 I is 1
 
 V is 5
