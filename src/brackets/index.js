@@ -6,7 +6,7 @@
  */
 function isValid(str) {
   let brackets = "[]{}()";
-  let stack = [];
+  let arrange = [];
 
   for(let bracket of str) {
     let bracketsIndex = brackets.indexOf(bracket)
@@ -16,15 +16,15 @@ function isValid(str) {
     }
 
     if(bracketsIndex % 2 === 0) {
-      stack.push(bracketsIndex + 1)
+      arrange.push(bracketsIndex + 1)
     } else {
-      if(stack.length === 0 || stack.pop() !== bracketsIndex) {
+      if(arrange.length === 0 || arrange.pop() !== bracketsIndex) {
         return 'invalid';
       }
     }
   }
 
-  return stack.length === 0 ? 'valid' : 'invalid';
+  return arrange.length === 0 ? 'valid' : 'invalid';
 }
 
 module.exports = isValid;
