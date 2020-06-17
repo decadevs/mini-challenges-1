@@ -9,11 +9,11 @@ function romanToDecimal (roman) {
     let decimal = 0;
     let romanArray = roman.split('');
 
-    romanArray.map(a => {
-        switch(a) {
+    for(let i = 0; i < romanArray.length; i++) {
+        switch(romanArray[i]) {
 
             case 'I': 
-            if(romanArray.indexOf('V') == romanArray.indexOf(a) + 1 || romanArray.indexOf('X') == romanArray.indexOf(a) + 1) {
+                if(romanArray[i + 1] === 'V' || romanArray[i + 1] === 'X') {
                 decimal -= 1
             }
             else{
@@ -26,7 +26,7 @@ function romanToDecimal (roman) {
                 break;
 
             case 'X':
-                if(romanArray.indexOf('L') == romanArray.indexOf(a) + 1 || romanArray.indexOf('C') == romanArray.indexOf(a) + 1) {
+                if(romanArray[i + 1] === 'L' || romanArray[i + 1] === 'C') {
                     decimal -= 10
                 }
                 else{
@@ -39,7 +39,7 @@ function romanToDecimal (roman) {
                 break;
 
             case 'C':
-                if(romanArray.indexOf('D') == romanArray.indexOf(a) + 1 || romanArray.indexOf('M') == romanArray.indexOf(a) + 1) {
+                if(romanArray[i + 1] === 'D' || romanArray[i + 1] === 'M') {
                     decimal -= 100
                 }
                 else{
@@ -47,21 +47,20 @@ function romanToDecimal (roman) {
                 }
                 break;
 
-                case 'D':
-                    decimal += 500;
-                    break;
+            case 'D':
+                decimal += 500;
+                break;
 
-                case 'M':
-                    decimal += 1000;
-                    break;
-
+            case 'M':
+                decimal += 1000;
+                break; 
+          
         }
-    });
-    
-    
-        return decimal;
-    
     }
+    
+    
+    return decimal;    
+}
 
 
 module.exports = romanToDecimal;
