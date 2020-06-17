@@ -7,8 +7,7 @@
 function isValid(str) {
     //create an empty array to hold all the opening brackets
     let arr = [];
-    //create an empty array to hold the current bracket if no matching open pair
-    let notFound = [];
+
     //create object pairs to know which closing bracket goes with which opening bracket
     let bracketObj = {
         '}': '{',
@@ -24,7 +23,7 @@ function isValid(str) {
             //if there are closed brackets, remove the corresponding opening bracket from arr
         } else if (currentBracket === '}' || currentBracket === ')' || currentBracket === ']') {
             // but look for the last index of the current bracket in the object, if it isn't there push the current bracket in the array to the empty notFound array
-            if (arr.lastIndexOf(bracketObj[currentBracket]) === -1) notFound.push(currentBracket)
+            if (arr.lastIndexOf(bracketObj[currentBracket]) === -1) return "invalid"
                 // also, if the bracket at the end of the arr is the same as the currrent bracket, it should be removed from the empty array
             if (arr[arr.length - 1] === bracketObj[currentBracket]) {
                 const removed = arr.splice(arr.lastIndexOf(bracketObj[currentBracket]), 1)
@@ -32,8 +31,7 @@ function isValid(str) {
             }
         }
     }
-    // console.log(arr, notFound);
-    return arr.length || notFound.length ? "invalid" : "valid";
+    return arr.length ? "invalid" : "valid";
 }
 
 module.exports = isValid;
