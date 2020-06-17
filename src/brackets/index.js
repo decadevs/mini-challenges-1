@@ -5,23 +5,30 @@
  * @returns {"valid" | "invalid"} Whether or not the string is valid.
  */
 function isValid(str) {
-    const match = {
+    if (str.length <= 1) return "invalid"
+    const matchingBrackets = {
         '(':')',
         '[':']',
         '{':'}'
     };
     let stack = [];
-    for (let i = 0; i<str.length; i++){
-      if (match[s[i]]){
-        stack.push(s[i]);
-      }else{
-        let open = stack.pop();
-        if (!match[open] || match[open] !== s[i]){
-          return false;
+    for (let i = 0; i < str.length; i++) {
+      if (matchingBrackets[str[i]]){
+        stack.push(matchingBrackets[str[i]]);
+      }
+      else {
+        if (str[i] !== stack.pop()) {
+          return "invalid";
         }
+      if (stack.length > str.length - i) return "invalid";
       }
     }
-    return !stack.length;
+    if ((stack.length == 0)==true) {
+      return "valid"
+  } else {
+      return "invalid"
+  }
+
 };
 
 module.exports = isValid;
