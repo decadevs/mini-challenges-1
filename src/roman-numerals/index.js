@@ -5,7 +5,7 @@
  * @returns {number} The decimal equivalent.
  */
 function romanToDecimal(roman) {
-  // roman = roman.split(''); roman 
+  // create and object containig key:value pairs of the roman numerals to their values
   const romanToNum = {
     "M": 1000,
     "CM": 900,
@@ -23,13 +23,16 @@ function romanToDecimal(roman) {
   }
   
   let sum = 0;
+  // create and array of the roman numeral string passed into the function
   let romArr = roman.split("");
   let curr, next;
 
   for (let i = 0; i < romArr.length; i++) {
+    // set current to the arr[i] and next to the step increment on i
     curr = romanToNum[romArr[i]];
     next = romanToNum[romArr[i + 1]];
 
+    // subtract current from sum if it is lesser than the next array. Otherwise, add current to sum
     if (curr < next) {
       next
       sum -= curr;
