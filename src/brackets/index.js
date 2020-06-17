@@ -23,11 +23,7 @@ function isValid(str) {
       if (stack.length > str.length - i) return "invalid";
       }
     }
-    if ((stack.length == 0)==true) {
-      return "valid"
-  } else {
-      return "invalid"
-  }
+    return stack.length === 0 ? 'valid' : 'invalid';
 
 };
 
