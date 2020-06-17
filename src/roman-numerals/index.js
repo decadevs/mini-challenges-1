@@ -7,8 +7,8 @@
 function romanToDecimal(roman) {
   // roman = roman.split(''); roman 
   const romanToNum = {
-    "M" : 1000,
-    "CM" : 900,
+    "M": 1000,
+    "CM": 900,
     "D": 500,
     "CD": 400,
     "C": 100,
@@ -21,18 +21,22 @@ function romanToDecimal(roman) {
     "IV": 4,
     "I": 1,
   }
+  
   let sum = 0;
-  let romArr = roman.split(""); 
+  let romArr = roman.split("");
   let curr, next;
 
-  for(let i=0; i < romArr.length; i++){
-    curr = romanToNum[romArr[i]]; 
-    next = romanToNum[romArr[i+1]]; 
-    
-    if(curr < next){next
-      sum-=curr; sum
+  for (let i = 0; i < romArr.length; i++) {
+    curr = romanToNum[romArr[i]];
+    next = romanToNum[romArr[i + 1]];
+
+    if (curr < next) {
+      next
+      sum -= curr;
+      sum
     } else {
-      sum+= curr; sum
+      sum += curr;
+      sum
     }
   }
   return sum
