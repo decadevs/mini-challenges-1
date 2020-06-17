@@ -42,6 +42,5 @@ function romanToDecimal(roman) {
 
 
 }
-console.log(romanToDecimal("CD"))
 
 module.exports = romanToDecimal;

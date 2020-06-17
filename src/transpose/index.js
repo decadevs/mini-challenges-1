@@ -6,13 +6,13 @@
  */
 function transpose(array) {
   let copy = []
-  for(var i = 0; i < array.length; i++) {
-    for(var j = 0; j < array[i].length; j++) {
-      if(array[i][j] === undefined)
+  for(var row = 0; row < array.length; row++) {
+    for(var col = 0; col < array[row].length; col++) {
+      if(array[row][col] === undefined)
       continue
-      if(copy[j] === undefined)
-      copy[j] = []
-      copy[j][i] = array[i][j]
+      if(copy[col] === undefined)
+      copy[col] = []
+      copy[col][row] = array[row][col]
     }
   }
   return copy

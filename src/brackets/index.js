@@ -6,13 +6,13 @@
  */
 function isValid(str) {
   const stack = []
-  for(let x of str) {
-    if(x == '(' || x == '{' || x == '['){
-      stack.push(x)
+  for(let bracketType of str) {
+    if(bracketType == '(' || bracketType == '{' || bracketType == '['){
+      stack.push(bracketType)
     }
     else {
       let lastEntry = stack.pop()
-      if(lastEntry === '(' && x !== ')' || lastEntry === '{' && x !== '}' || lastEntry === '[' && x !== ']' || !lastEntry) return "invalid"
+      if(lastEntry === '(' && bracketType !== ')' || lastEntry === '{' && bracketType !== '}' || lastEntry === '[' && bracketType !== ']' || !lastEntry) return "invalid"
     }
   }
   if(stack.length > 0) return "invalid"
