@@ -4,20 +4,17 @@
  * @param {number[]} array The array to transpose
  * @returns {number[]} The transposed array
  */
-const transpose = array => {
-    const mLength = array[0].length;
-    const nLength = array.length;
-    const transposedArr = [];
-    for (let j = 0; j < mLength; ++j) {
-        const transVal = [];
-        for(let k = 0; k < nLength; ++k){
-        let val = array[k].shift();
-        transVal.push(val);
-        }
-        transposedArr.push(transVal); 
-        
+function transpose(array) {
+  const ROW_LENGTH = array[0].length;
+  const COLUMN_LENGTH = array.length;
+  const TRANSPOSED_ARRAY = [];
+  for (let j = 0; j < ROW_LENGTH; ++j) {
+    const NEW_ROW = [];
+    for (let k = 0; k < COLUMN_LENGTH; ++k) {
+      NEW_ROW.push(array[k].shift());
     }
-    return transposedArr
+    TRANSPOSED_ARRAY.push(NEW_ROW);
+  }
+  return TRANSPOSED_ARRAY;
 }
-
 module.exports = transpose;
