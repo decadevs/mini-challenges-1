@@ -31,7 +31,7 @@ function romanTonumber(roman) {
       }
       if (romanNumeralValues[firstLetter] >= romanNumeralValues[nextLetter]) {
         number += romanNumeralValues[firstLetter];
-      } else if (romanNumeralValues[firstLetter] < romanNumeralValues[nextLetter]) {
+      } else {
         number -= (romanNumeralValues[firstLetter]);
       }
     }
