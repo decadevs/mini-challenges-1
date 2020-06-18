@@ -5,30 +5,29 @@
  * @returns {"valid" | "invalid"} Whether or not the string is valid.
  */
 function isValid(str) {
-    var brac = str.split('');
-    var aa = ['(','[','{'];
-    var bb = [')',']','}'];
-    var ans = [];
-    for (var i = 0; i < brac.length; i++) {
-        if (brac[i] == '(' || brac[i] == '[' || brac[i] == '{') {
-            ans.push(brac[i]);
-        }  
-        else if (brac[i] == ')' || brac[i] == ']' || brac[i] == '}') {
-            var ind = bb.indexOf(brac[i]);
-            if(ans[ans.length - 1] === aa[ind] ) {
-                var rem = ans.pop();
-            }
-            else {
-                ans.push(brac[i]);
-            }  
-        }
+  arrayStr = str.split('');
+  const openBrace = ["(", "[", "{"];
+  const closeBrace = [")", "]", "}"];
+  let array = [];
+
+  for (let i = 0; i < arrayStr.length; i++) {
+    array.push(arrayStr[i]);
+
+    let lastElement = array[array.length - 1];
+    //Check that the last element is a close bracket and
+    //that it index is the same with it open braket.
+    if (closeBrace.indexOf(lastElement) !== -1 &&
+    closeBrace.indexOf(lastElement) ===
+    openBrace.indexOf(array[array.length - 2])) {
+      array.splice(array.length - 2);  //Remove the last two elements
     }
-    if (ans.length == 0) {
-        return "valid";
-    }
-    else {
-        return "invalid";
-    }
+  }
+  //Check whether or not the array is now empty after the loop
+  if (array.length === 0) {
+    return "valid";
+  } else {
+    return "invalid";
+  }
 }
 
 module.exports = isValid;
