@@ -29,7 +29,6 @@ function romanToDecimal(roman) {
             result += current;
         }
 
-
     };
 
     return result;
