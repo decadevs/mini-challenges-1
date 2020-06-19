@@ -43,5 +43,4 @@ function isValid(str) {
   }
   return "valid";
 }
-
 module.exports = isValid;
