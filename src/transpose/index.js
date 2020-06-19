@@ -8,8 +8,8 @@ function transpose(array) {
 
     let newArray = [];
 
-    for(let row = 0; row < array.length; ++row){
-        for(let col = 0; col <array[i].length; ++col){
+    for(let row = 0; row < array.length; row++){
+        for(let col = 0; col <array[row].length; col++){
 
             if(array[row][col] === undefined) continue;
 
