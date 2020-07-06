@@ -6,31 +6,29 @@
  */
 function isValid(str) 
 {
-    let matchingOpeningBracket, ch
-  let stack = []
 
-  let openingBrackets = ['[', '{', '(']
-  let closingBrackets = [']', '}', ')']
+  let openBracket = ['{', '[', '('];
+  let closeBracket = ['}', ']', ')'];
 
-  for (let i = 0; i < str.length; i++) 
-  {
-    ch = str[i]
+  let stack = [];
 
-    if (closingBrackets.indexOf(ch) > -1) 
-    {
-      matchingOpeningBracket = openingBrackets[closingBrackets.indexOf(ch)]
-      if (stack.length == 0 || (stack.pop() != matchingOpeningBracket)) 
-      {
-        return "invalid"
+  for (let i = 0; i < str.length; i++) {
+      if (openBracket.indexOf(str[i]) >= 0) {
+          stack.push(str[i]);
+      } else {
+          if (closeBracket.indexOf(str[i]) != openBracket.indexOf(stack.pop())) {
+              return "invalid";
+          }
       }
-    } else {
-      stack.push(ch)
-     return "valid"
-    }
   }
 
-  
+  if (stack.length > 0) {
+      return "invalid";
+  }
+
+  return "valid";
 };
+
 
 
 module.exports = isValid;
