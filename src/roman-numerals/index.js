@@ -26,7 +26,16 @@ function romanToDecimal(roman) {
         let next = digits[input[i + 1]]
         if(current === undefined){
             return 'null'
-       
+        }else{
+            if(current < next){
+                result += next - current
+                i++
+            }else{
+                result += current
+            }
+        }
+    };
+    return result;
 }
 
 module.exports = romanToDecimal;
