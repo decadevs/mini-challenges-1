@@ -5,12 +5,13 @@
  * @returns {number[]} The transposed array
  */
 function transpose(array) {
-    // creating an empty 2d array
-    let newArray = [];
-    for(let i = 0; i<array.length; i++){
-        newArray.push(arrar[[]])
+    if (array) {
+        var n = array.length;
+        // nexted loop to iterate through the 2d array 
+            for (var i = 0; i < n; i++) {
+                for (var j = i + 1; j < n; j++) {
+                    var temp = array[i][j];
+                    
     }
-    
-}
 
 module.exports = transpose;
