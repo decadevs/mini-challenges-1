@@ -20,8 +20,13 @@ function romanToDecimal(roman) {
     let result = 0;
 
     let input = roman.split("");
-
-    
+// iterate the splitted string 
+    for(let i = 0; i<input.length; i++){
+        let current = digits[input[i]]
+        let next = digits[input[i + 1]]
+        if(current === undefined){
+            return 'null'
+       
 }
 
 module.exports = romanToDecimal;
