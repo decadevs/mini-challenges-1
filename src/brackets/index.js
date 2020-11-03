@@ -5,25 +5,25 @@
  * @returns {"valid" | "invalid"} Whether or not the string is valid.
  */
 function isValid(str) {
-    const strArr = str.split("");
-    const resultArr = [];
+    const strAr = str.split("");
+    const result = [];
     for (let i = 0; i < str.length; i++) {
-      if (strArr[i] == "{" || strArr[i] == "[" || strArr[i] == "(") {
-        resultArr.push(strArr[i]);
+      if (strAr[i] == "{" || strAr[i] == "[" || strAr[i] == "(") {
+        result.push(strAr[i]);
       }
-      if (strArr[i] == "}" || strArr[i] == "]" || strArr[i] == ")") {
-        if (resultArr[resultArr.length - 1] == "{" && strArr[i] == "}") {
-          resultArr.pop();
-        } else if (resultArr[resultArr.length - 1] == "[" && strArr[i] == "]") {
-          resultArr.pop();
-        } else if (resultArr[resultArr.length - 1] == "(" && strArr[i] == ")") {
-          resultArr.pop();
+      if (strAr[i] == "}" || strAr[i] == "]" || strAr[i] == ")") {
+        if (result[result.length - 1] == "{" && strAr[i] == "}") {
+          result.pop();
+        } else if (result[result.length - 1] == "[" && strAr[i] == "]") {
+            result.pop();
+        } else if (result[result.length - 1] == "(" && strAr[i] == ")") {
+            result.pop();
         } else {
           return "invalid";
         }
       }
     }
-    return resultArr.length === 0 ? "valid" : "invalid";
+    return result.length === 0 ? "valid" : "invalid";
   }
 
 // const isValid = (str) => {
