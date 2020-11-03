@@ -7,11 +7,13 @@
 function isValid(str) {
     let result = [];
     for (let i = 0; i<str.length; i++){ // iterate through the string
-        let bindx = str.indexOf(str[i]) // to obtain the index of each opening bracket
-        if(bindx % 2 === 0){
-            result.push(bindx + 1) // push the even bracket into result for comparism.
+        if(str[i]=== "(" || str[i]=== "[" || str[i]=== "{"){
+            result.push(str[i])
+        // let bindx = str.indexOf(str[i]) // to obtain the index of each opening bracket
+        // if(bindx % 2 === 0){
+        //     result.push(bindx + 1) // push the even bracket into result for comparism.
         }else{
-            if(result.pop() !== bindx){ // to check if we cannot find a bracket that match
+            if(str[i] !== result.pop()){ // to check if we cannot find a bracket that match
                 return "invalid"
             }
         }
