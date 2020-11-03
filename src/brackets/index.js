@@ -29,38 +29,74 @@
     // return (result === []) ? "valid": "invalid"
 // }
 
-const isValid = (str) => {
-    let result = [];
-    let result2 = [];
-    for(let i = 0; i<str.length; i++){
-        if(str[i] === "(" || str[i] === "[" || str[i] === "{" ){
-            result.push(str[i]);
+// const isValid = (str) => {
+//     let result = [];
+//     let result2 = [];
+//     for(let i = 0; i<str.length; i++){
+//         if(str[i] === "(" || str[i] === "[" || str[i] === "{" ){
+//             result.push(str[i]);
            
-      }
-        if(str[i] === ")"){
-            result2.push("(")
-        }else if(str[i] === "]"){
-            result2.push("[")
-        }else if(str[i] === "}" ){
-            result2.push("{");
+//       }
+//         if(str[i] === ")"){
+//             result2.push("(")
+//         }else if(str[i] === "]"){
+//             result2.push("[")
+//         }else if(str[i] === "}" ){
+//             result2.push("{");
             
 
-      }
+//       }
         
+//     }
+
+//     result2.reverse();
+//     return ( result.length>result2.length || result.length<result2.length) ? "valid" : "invalid"
+
+//     for(let k=0; k<result.length; k++) {
+//         if(result[k] === result2[k]){
+//             return "valid";
+//     }
+// }
+
+// return "invalid";
+// }
+
+
+function isValid(expression){
+    let leftArr=[];
+    let rightArr = [];
+    for(let i=0; i<expression.length; i++){
+    		if(expression[i] === '(' || expression[i] === '[' || expression[i] === "{"){
+        	leftArr.push(expression[i]);
+        }
+        
+        
+        if(expression[i] === ')'){
+      
+        		rightArr.push("(");
+        }else if(expression[i] === '}'){
+        
+        		rightArr.push("{");
+        } else if(expression[i] === ']'){
+        
+        		rightArr.push("[");
+        }
+   }
+		
+   rightArr.reverse();
+    
+    if(leftArr.length<rightArr.length || leftArr.length>rightArr.length){
+    return false;
+    }
+    
+    for(let k=0; k<leftArr.length; k++) {
+    		if(leftArr[k] != rightArr[k]){
+        		return false;
+        }
     }
 
-    result2.reverse();
-    return ( result.length>result2.length || result.length<result2.length) ? "valid" : "invalid"
-
-    for(let k=0; k<result.length; k++) {
-        if(result[k] === result2[k]){
-            return "valid";
-    }
+    return true;
 }
-
-return "invalid";
-}
-
 module.exports = isValid;
 
 
