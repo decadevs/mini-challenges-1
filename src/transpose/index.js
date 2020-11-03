@@ -5,14 +5,14 @@
  * @returns {number[]} The transposed array
  */
 function transpose(array) {
-    let newtrans = [];
+    let newTrans = [];
 
     for(let i = 0; i<array.length; i++){
         let newCol = [];
         for(let j =0; j<array.length; j++){
             newCol.push(array[j][i])
         }
-        
+        newTrans.push(newCol)
     }
     // if (array) {
     //     var n = array.length;
@@ -28,8 +28,7 @@ function transpose(array) {
     //         return array;
     //     }
     //     return null;
-    newtrans.push(newCol)
+    return newTrans
 }
-    return newtrans
 
 module.exports = transpose;
