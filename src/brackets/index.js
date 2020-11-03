@@ -42,8 +42,9 @@ const isValid = (str) => {
             
 
       }
-        return ( result.length === result2.length) ? "valid" : "invalid"
+        
     }
+    return ( result.length === result2.length) ? "valid" : "invalid"
 }
 
 module.exports = isValid;
