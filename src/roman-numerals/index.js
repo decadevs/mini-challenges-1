@@ -25,10 +25,12 @@ function romanToDecimal(roman) {
         let current = digits[input[i]]
         let next = digits[input[i + 1]]
         if(current === undefined){
-            return 'null'
+            return result
        
         }
     }
+
+    return "null"
 
 }
 
