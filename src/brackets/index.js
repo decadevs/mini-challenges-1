@@ -42,6 +42,13 @@ const isValid = (str) => {
       }
     return (result.length === result2.length) ? "valid" : "invalid"
     }
+    result2.reverse();
+    for(let j = 0; j<result.length; j++){
+        if(result[j] !== result2){
+            return "invalid"
+        }
+    }
+    return "valid"
 }
 
 module.exports = isValid;
