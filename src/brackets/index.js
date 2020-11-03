@@ -32,6 +32,7 @@
 const isValid = (str) => {
     let result = [];
     let result2 = [];
+   
     for(let i = 0; i<str.length; i++){
         if(str[i] === "(" || str[i] === "[" || str[i] === "{" ){
             result.push(str[i]);
@@ -42,9 +43,9 @@ const isValid = (str) => {
       }
     return (result.length > result2.length || result.length < result2.length || result.length !== result2.length) ? "invalid" : "valid"
     }
-    result2.reverse();
+    let newResult = result2.reverse();
     for(let j = 0; j<result.length; j++){
-        if(result[j] !== result2){
+        if(result[j] !== newResult){
             return "invalid"
         }
     }
