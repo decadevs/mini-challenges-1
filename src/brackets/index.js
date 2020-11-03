@@ -45,7 +45,7 @@ const isValid = (str) => {
     }
     let newResult = result2.reverse();
     for(let j = 0; j<result.length; j++){
-        if(result[j] !== newResult){
+        if(result[j] !== newResult[j]){
             return "invalid"
         }
     }
