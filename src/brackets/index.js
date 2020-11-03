@@ -19,7 +19,7 @@ function isValid(str) {
         //     return "valid";
         // }
     }
-    return (result !== []) ? "invalid": "valid"
+    return (result === []) ? "valid": "invalid"
 }
 
 module.exports = isValid;
