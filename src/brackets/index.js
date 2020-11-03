@@ -15,11 +15,11 @@ function isValid(str) {
                 return "invalid"
             }
         }
-        if(result.length === 0){ // return true if there is no bracket left in result else return false.
-            return "invalid";
-        }
+        // if(result.length === 0){ // return true if there is no bracket left in result else return false.
+        //     return "valid";
+        // }
     }
-    return "valid"
+    return (result.length === 0) ? "valid": "invalid"
 }
 
 module.exports = isValid;
