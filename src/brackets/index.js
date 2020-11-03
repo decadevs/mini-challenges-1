@@ -35,14 +35,14 @@ const isValid = (str) => {
     for(let i = 0; i<str.length; i++){
         if(str[i] === "(" || str[i] === "[" || str[i] === "{" ){
             result.push(str[i]);
-            let len1 = result.length
+           
       }
         if(str[i] === ")" || str[i] === "]" || str[i] === "}" ){
             result2.push(str[i]);
-            let len2 = result2.length
+            
 
       }
-        return (len1 == len2.length) ? "valid" : "invalid"
+        return ( result.length === result2.length) ? "valid" : "invalid"
     }
 }
 
