@@ -12,7 +12,7 @@ function transpose(array) {
         for(let j =0; j<array.length; j++){
             newCol.push(array[j][i])
         }
-        newtrans.push(newCol)
+        
     }
     // if (array) {
     //     var n = array.length;
@@ -28,7 +28,7 @@ function transpose(array) {
     //         return array;
     //     }
     //     return null;
-    return newtrans
+    newtrans.push(newCol)
 }
-
+return newtrans
 module.exports = transpose;
