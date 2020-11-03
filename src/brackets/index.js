@@ -33,6 +33,4 @@ function isValid(str) {
   return result;
 }
 
-console.log(isValid("({ab)})"));
-
 module.exports = isValid;

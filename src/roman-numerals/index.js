@@ -36,6 +36,5 @@ function romanToDecimal(roman) {
   }
   return numeralArray.reduce((a, b) => a + b, 0); // return the sum of array after all iteration
 }
-console.log(romanToDecimal("MM"));
 
 module.exports = romanToDecimal;

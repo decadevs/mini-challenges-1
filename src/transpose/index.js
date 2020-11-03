@@ -28,5 +28,4 @@ function transpose(array) {
   }
   return transposedArray;
 }
-console.log(transpose([[1, 2, 3, 4, 5]]));
 module.exports = transpose;
