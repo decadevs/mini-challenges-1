@@ -37,16 +37,33 @@ const isValid = (str) => {
             result.push(str[i]);
            
       }
-        if(str[i] === ")" || str[i] === "]" || str[i] === "}" ){
-            result2.push(str[i]);
+        if(str[i] === ")"){
+            result2.push("(")
+        }else if(str[i] === "]"){
+            result2.push("[")
+        }else if(str[i] === "}" ){
+            result2.push(str"{");
             
 
       }
         
     }
-    return ( result.length === result2.length) ? "valid" : "invalid"
+
+    result2.reverse();
+    return ( result.length>result2.length || result.length<result2.length) ? "valid" : "invalid"
+
+    for(let k=0; k<result.length; k++) {
+        if(result[k] != result2[k]){
+            return "invalid";
+    }
+}
+
+return "valid";
 }
 
 module.exports = isValid;
+
+
+
 
 
