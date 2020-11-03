@@ -53,12 +53,12 @@ const isValid = (str) => {
     return ( result.length>result2.length || result.length<result2.length) ? "valid" : "invalid"
 
     for(let k=0; k<result.length; k++) {
-        if(result[k] !== result2[k]){
-            return "invalid";
+        if(result[k] === result2[k]){
+            return "valid";
     }
 }
 
-return "valid";
+return "invalid";
 }
 
 module.exports = isValid;
