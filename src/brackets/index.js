@@ -31,24 +31,32 @@
 
 const isValid = (str) => {
     let result = [];
-    let result2 = [];
+    // let result2 = [];
     for(let i = 0; i<str.length; i++){
         if(str[i] === "(" || str[i] === "[" || str[i] === "{" ){
             result.push(str[i]);
       }
         if(str[i] === ")" || str[i] === "]" || str[i] === "}" ){
-            result2.push(str[i]);
+            if(result[result.length]-1 == "(" && str[i] == ")"){
+                result.pop()
+            }else if(result[result.length]-1 == "[" && str[i] == "]"){
+                result.pop()
+            }else if(result[result.length]-1 == "{" && str[i] == "}"){
+                result.pop()
+            }else{
+                return "invalid"
+            }
 
       }
-    return (result.length > result2.length || result.length < result2.length || result.length !== result2.length) ? "invalid" : "valid"
+    // return (result.length > result2.length || result.length < result2.length || result.length !== result2.length) ? "invalid" : "valid"
     }
-    result2.reverse();
-    for(let j = 0; j<result.length; j++){
-        if(result[j] !== result2){
-            return "invalid"
-        }
-    }
-    return "valid"
+    // result2.reverse();
+    // for(let j = 0; j<result.length; j++){
+    //     if(result[j] !== result2){
+    //         return "invalid"
+    //     }
+    // }
+    return result.length === 0 ? "valid" : "invalid";
 }
 
 module.exports = isValid;
