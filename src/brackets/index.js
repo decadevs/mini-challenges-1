@@ -40,7 +40,7 @@ const isValid = (str) => {
             result2.push(str[i]);
 
       }
-    return (result.length > result2.length || result.length < result2.length || result.length !== result2.length) ? "valid" : "invalid"
+    return (result.length > result2.length || result.length < result2.length || result.length !== result2.length) ? "invalid" : "valid"
     }
     result2.reverse();
     for(let j = 0; j<result.length; j++){
@@ -48,7 +48,7 @@ const isValid = (str) => {
             return "invalid"
         }
     }
-    return "invalid"
+    return "valid"
 }
 
 module.exports = isValid;
