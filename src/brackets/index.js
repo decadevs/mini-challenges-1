@@ -5,6 +5,11 @@
  * @returns {"valid" | "invalid"} Whether or not the string is valid.
  */
 function isValid(str) {
+    let map = {
+        '(': ')',
+        '[': ']',
+        '{': '}'
+    }
     let result = [];
     for (let i = 0; i<str.length; i++){ // iterate through the string
         if(str[i]=== "(" || str[i]=== "[" || str[i]=== "{"){
