@@ -21,8 +21,8 @@ function transpose(array) {
                 for (var j = i + 1; j < n; j++) {
                     var temp = array[i][j];
                     //transpose col and rows
-                    array[i][j] === array[j][i];
-                    array[j][i] === temp;
+                    array[i][j] = array[j][i];
+                    array[j][i] = temp;
                 }
             }
             return array;
