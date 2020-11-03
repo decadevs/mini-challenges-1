@@ -16,10 +16,10 @@ function isValid(str) {
             }
         }
         if(result.length === 0){ // return true if there is no bracket left in result else return false.
-            return "valid";
+            return "invalid";
         }
     }
-    return "invalid"
+    return "valid"
 }
 
 module.exports = isValid;
