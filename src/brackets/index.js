@@ -42,10 +42,13 @@ const isValid = (str) => {
             
 
       }
+
+        if( result.length !== result2.length){
+            return "invalid"
+        }
         
     }
-    return ( result.length !== result2.length) ? "invalid" : "valid"
-}
+    return "valid"
 
 module.exports = isValid;
 
