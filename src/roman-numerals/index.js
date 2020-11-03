@@ -27,6 +27,9 @@ function romanToDecimal(roman) {
         if(current === undefined){
             return 'null'
        
+        }
+    }
+
 }
 
 module.exports = romanToDecimal;
