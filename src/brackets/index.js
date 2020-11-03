@@ -42,7 +42,7 @@ const isValid = (str) => {
         }else if(str[i] === "]"){
             result2.push("[")
         }else if(str[i] === "}" ){
-            result2.push(str"{");
+            result2.push("{");
             
 
       }
