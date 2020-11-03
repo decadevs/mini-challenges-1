@@ -30,5 +30,6 @@ function transpose(array) {
     //     return null;
     newtrans.push(newCol)
 }
-return newtrans
+    return newtrans
+
 module.exports = transpose;
