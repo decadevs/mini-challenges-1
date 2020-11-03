@@ -47,8 +47,9 @@ const isValid = (str) => {
             return "invalid"
         }
         
+        return "valid"
     }
-    return "valid"
+    
 
 module.exports = isValid;
 
