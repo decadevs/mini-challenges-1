@@ -5,7 +5,8 @@
  * @returns {number} The decimal equivalent.
  */
 function romanToDecimal(roman) {
-  let split = roman.split('');
+  let upper = roman.toUpperCase();
+  let split = upper.split('');
   let val = {
     'I': 1,
     'V': 5,
