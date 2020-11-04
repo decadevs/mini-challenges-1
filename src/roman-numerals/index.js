@@ -5,34 +5,37 @@
  * @returns {number} The decimal equivalent.
  */
 function romanToDecimal(roman) {
-    let split = roman.split('');
-    let values = {
-      'I': 1,
-      'V': 5,
-      'X': 10,
-      'L': 50,
-      'C': 100,
-      'D': 500,
-      'M': 1000
-    }
-    split.map( i => {
-      if(i !== values.keys) {return 'wrong roman number'};
-    })
-    for(i = 0; i < split.length; i++) {
-      let sum = 0;
-      let char = split[i];
-      for(j = i+1; j < split.length; j++) {
-        let char2 = split[j];
-        if(values[char] > values[char2]) {
-        sum = sum + values[char];
-        return sum;
-        } else {
-          sum = sum + (values[char2] - values[char]);
-          return sum;
-        }
-      }
-    }
+  let split = roman.split('');
+  let val = {
+    'I': 1,
+    'V': 5,
+    'X': 10,
+    'L': 50,
+    'C': 100,
+    'D': 500,
+    'M': 1000
   }
-  console.log(romanToDecimal("eee"))
+  let msg = '';
+  split.forEach( i => {
+    if(!val[i]) { msg = 'wrong roman number' };
+
+  })
+  if (msg.length > 0) return msg;
+  let sum = 0;
+  for(i = 0; i < split.length; i++) {
+    let char = split[i];
+    let char2 = split[i+1];
+      if(val[char] < val[char2]) {
+      sum -= val[char];
+      } else {
+        sum += val[char];
+      }  
+  }
+  return sum;
+}
+console.log(romanToDecimal("I"));
+
+
+
 
 module.exports = romanToDecimal;
