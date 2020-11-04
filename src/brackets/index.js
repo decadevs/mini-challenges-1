@@ -17,13 +17,13 @@ function isValid(str) {
         arr.push(str[i]);
       } else {
         let end = arr.pop();
-        if(str[i] !== obj[end]) {return 'inValid'}
+        if(str[i] !== obj[end]) {return 'invalid'}
       }
     }
-      if(arr.length !== 0) {return 'inValid'}
+      if(arr.length !== 0) {return 'invalid'}
     return 'valid';
   }
   
-  console.log(isValid("[]"));
+
 
 module.exports = isValid;
