@@ -24,7 +24,21 @@ function romanToDecimal(roman) {
             arr.splice(i, 1, 1)
         }
     } 
-
+    var newArr = []
+    for (var i = 0; i < arr.length; i++) {
+        var item = arr[i];
+        if (i === 0) {
+            newArr.push(item);
+        } else {
+            var lastNew = newArr[newArr.length-1]
+            if (item < lastNew || item === lastNew) {
+                newArr.push(item);
+            } else if (item > lastNew) {
+                var adjustNum = item-2*lastNew
+                newArr.push(adjustNum);
+            }
+        }
+    }
 }
 
 module.exports = romanToDecimal;
