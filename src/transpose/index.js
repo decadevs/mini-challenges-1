@@ -5,17 +5,19 @@
  * @returns {number[]} The transposed array
  */
 function transpose(array) {
-    let transposed = [];
-    if(array.length < 1 || array.length > 10) {
-        return
-    } else {
-        for(let i = 0; i < array.length; i++) {
-            for(let m = 0; m < array[i].length; m++) {
-              transposed.push(array[i][m]);
-              console.log(transposed);
-            }   
-        }
+     if(array.length < 1 || array.length > 10) {
+      return;
+    } 
+    if(array[0].length < 1 || array[0].length > 10) {
+      return;
     }
+    let transposed = [];
+    for(let i = 0; i < array[0].length; i++) {
+      transposed[i] = [];
+      for(let m = 0; m < array.length; m++) {
+          transposed[i][m] = array[m][i];
+        }   
+     } 
     return transposed;
 }
 console.log(transpose([
