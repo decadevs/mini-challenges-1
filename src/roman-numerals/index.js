@@ -39,6 +39,7 @@ function romanToDecimal(roman) {
             }
         }
     }
+    return newArr.reduce((a, b) => a + b, 0);
 }
 
 module.exports = romanToDecimal;
