@@ -6,11 +6,12 @@
  */
 function transpose(array) {
     var newArr = [];
-    for (var i = 0; i < array.length; i++) {
-        var item = array[i];
-        for (var j = 0; j < item.length; j++) {
-            newArr.push(arr.splice([i][j], 1));
+    for (var i = 0; i < array[0].length; i++) {
+        var column = [];
+        for (var j = 0; j < array.length; j++) {
+            column.push(array[j][i]);
         }
+        newArr.push(column);
     }
     return newArr;
 }
