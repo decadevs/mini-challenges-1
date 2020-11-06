@@ -5,7 +5,7 @@
  * @returns {number} The decimal equivalent.
  */
 function romanToDecimal(roman) {
-    let reg = /MMMM|CCCC|IIII|DDDD|XXXX|LLLL|VVVV/;
+    const reg = /(.)\1\1\1/;
     const charInt = char=>{
         switch (char) {
             case 'I': return 1;
