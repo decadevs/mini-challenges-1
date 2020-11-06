@@ -34,7 +34,6 @@ function romanToDecimal(roman) {
   }
   return sum;
 }
-console.log(romanToDecimal("I"));
 
 
 
