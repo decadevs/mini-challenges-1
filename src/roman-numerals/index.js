@@ -26,14 +26,17 @@ function romanToDecimal(roman) {
 		next = array[i+1];
 		nextValue = values[next];
 
-		if(currentValue >= nextValue) {
-			count += currentValue;
-		} else {
+		if(currentValue < nextValue) {
 			count -= currentValue;
+		} else {
+			count += currentValue;
 		}
 	}
-
-	return count;
+	if (count < 4000) {
+		return count;	
+	} else {
+		return 'please input a numeral less than 4000'
+	}
 }
 
 
