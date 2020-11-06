@@ -23,7 +23,11 @@ function transpose(array) {
                arrayTrans[b].push(array[a][b]);
 
            }
+
+            
         }
-    }
+
+        return arrayTrans;
+}
 
 module.exports = transpose;
