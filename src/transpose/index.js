@@ -15,3 +15,4 @@ function transpose(array) {
     }
     return newArr;
 }
+module.exports = transpose;
