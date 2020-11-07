@@ -23,7 +23,7 @@ function isValid(str) {
 	    }
 	}
 	  
-	if(leftBracket === rightBracket && leftBrace === rightBrace && leftCurl === rightCurl && str = ''){
+	if(leftBracket === rightBracket && leftBrace === rightBrace && leftCurl === rightCurl && str === ''){
 		return 'valid';
 	}else{
 		return 'invalid';
