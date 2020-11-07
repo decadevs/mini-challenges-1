@@ -24,9 +24,7 @@ function isValid(str) {
             if (str.charAt(i)==='}') curl[1].push(str.charAt(i));
         }
     }
-    if(parentesis[0].length!==parentesis[1].length||brack[0].length!==brack[1].length||curl[0].length!==curl[1].length) {
-        result = "invalid";
-    }
+    if(parentesis[0].length!==parentesis[1].length||brack[0].length!==brack[1].length||curl[0].length!==curl[1].length) result = "invalid";
     return result;
 }
 module.exports = isValid;
