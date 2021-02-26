@@ -5,7 +5,7 @@
  * @returns {number[]} The transposed array
  */
 function transpose(array) {
-    let result = [];
+    let result = []; // an empty array
     let col = array[0].length;
     let row = array.length;
     for(let i =0; i < col; i++){
