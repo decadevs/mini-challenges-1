@@ -6,18 +6,15 @@
  */
 function transpose(array) {
 
-    let rows = array.length;
-    let cols = array[0].length;
-    let transpose = [];
-for ( i = 0; i<cols; i++){
-      transpose[i] = [];
-     }
-
-for(j = 0; j < rows; j++){
-  for(i = 0; i < cols; i++){
-    transpose[i][j] = array[j][i];
+let transpose = [];
+for(i = 0; i < array[0].length; i++){
+  let rows = [];  //rows of the transposed array
+  for (j = 0; j < array.length; j++){
+    rows.push(array[j][i]);
   }
-}
+  transpose.push(rows);
+} 
+
    return transpose;
 }
 
