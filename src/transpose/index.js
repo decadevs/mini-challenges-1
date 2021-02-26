@@ -5,7 +5,7 @@
  * @returns {number[]} The transposed array
  */
 function transpose(array) {
-  // array[0] is used inorder to iterate through columns
+  // array[0] is used inorder to iterate through columns of the array
   return array[0].map((_, columnIndex) =>
     // append each column values in one iteration to a row
     array.map(row => row[columnIndex]));
