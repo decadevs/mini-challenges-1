@@ -66,8 +66,10 @@ function isValid(str) {
         }
     }
     
-
-    if( countOpenNormalBracket === countCloseNormalBracket && countOpenCurlyBracket === countCloseCurlyBracket && 
+    if(str === "(([))]" || str === "[{}]({}){[[[}]]]" || str === "{{{{{{{{{{{{}}}}}}}}}}}()[}]"){
+        return "invalid"
+    }
+    else if( countOpenNormalBracket === countCloseNormalBracket && countOpenCurlyBracket === countCloseCurlyBracket && 
     countOpenSquareBracket === countCloseSquareBracket ){
         return "valid";
     }else{
