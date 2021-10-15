@@ -21,6 +21,7 @@ Output:
 An array of integers
 
 ```js
+
 [
   [5, 13, 9],
   [12, 4, 6],
