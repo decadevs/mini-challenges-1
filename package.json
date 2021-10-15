@@ -1,5 +1,5 @@
 {
-  "name": "challenges",
+  "name": "mini",
   "version": "1.0.0",
   "description": "Lab 0 - challenges",
   "main": "jest",
@@ -7,7 +7,7 @@
     "test": "jest"
   },
   "keywords": [],
-  "author": "",
+  "author": "Victoria",
   "license": "ISC",
   "devDependencies": {
     "@types/jest": "^25.2.1",
@@ -16,5 +16,13 @@
   },
   "volta": {
     "node": "12.16.2"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Victoria-27/mini-challenges-1.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Victoria-27/mini-challenges-1/issues"
+  },
+  "homepage": "https://github.com/Victoria-27/mini-challenges-1#readme"
 }
