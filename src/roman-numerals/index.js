@@ -14,7 +14,8 @@ function romanToDecimal(roman) {
     V: 5,
     I: 1
   };
-  console.log(romanObj.key);
+  let roman =romanObj.entries();
+  console.log(roman)
 }
 
 module.exports = romanToDecimal;
