@@ -14,7 +14,6 @@
     number[i] = Array(rows);
   }
 
-
   for (let j = 0; j < rows; j++){
     for(let k = 0; k < columns; k++){
       number[k][j] = array[j][k]
