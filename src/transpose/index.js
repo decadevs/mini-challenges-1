@@ -6,8 +6,8 @@
  */
 function transpose(array) {
   let matrix = [];
-    for (let i = 0; i < array.length; ++i) {
-        for (let j = 0; j < array[i].length; ++j) {
+    for (let i = 0; i < array.length; i++) {
+        for (let j = 0; j < array[i].length; j++) {
             // skip undefined values to preserve sparse array...
             if (array[i][j] === undefined) continue;
             // create row if it doesn't exist yet...
