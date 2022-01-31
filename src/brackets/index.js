@@ -4,46 +4,34 @@
  * @param {string} str The string of brackets.
  * @returns {"valid" | "invalid"} Whether or not the string is valid.
  */
-function isValid(str) {
-    //first convert my string to array
-    let strArr = str.split("");
-    //initialize count
-    let noOpcurl=0;
-    let noClcurl=0;
-    let noOpsq =0;
-    let noclsq=0;
-    let noOppa=0;
-    let noclpa=0;
-    //loop through strArr to extract count
-    for(let item of strArr){
-        if(item=="{"){
-            noOpcurl++
-            return noOpcurl
-        }else if(item=="}"){
-            noClcurl++
-            return noClcurl
-        }else if(item=="["){
-            noOpsq++
-            return noOpsq
-        }else if(item=="]"){
-            noclsq++
-            return noclsq
-        }else if(item=="("){
-            noOppa++
-            return noOppa
-        }else if(item==")"){
-            noclpa++
-            return noclpa
-        }
-        //now use comparism operators to compare the counts
-        if(noOpcurl===noClcurl&&noOpsq===noclsq&&noOppa===noclpa){
-            return "valid"
-        }else{
+ function isValid(str) {
+  const openers = "[{(";
+  if( str[0]==="]"||str[0]==="}"||str[0]===")"){
+    return "invalid"
+  }
+  obj = {
+      '}': '{',
+      ']': '[',
+      ')': '('
+  }
+        //"{}{{[[))"
+  const stack = [];
+  for (let i = 0; i < str.length; i++) {
+    //(!openers.includes(str[i]))return "invalid"
+      if (openers.includes(str[i])) {
+          stack.push(str[i])
+      } else {
+          let last = stack[stack.length - 1];
+          if (obj[str[i]] === last) {
+              stack.pop()
+          }else{
             return "invalid"
-        }
-        let conditionArr=["[)","(]","[}","{]","(}","{)"],
+          }
 
-    }
+      }
+  }
+  return stack.length ? 'invalid' : 'valid'
+
 }
-
+console.log(isValid("{}{(())}"))
 module.exports = isValid;
