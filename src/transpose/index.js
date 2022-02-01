@@ -4,7 +4,7 @@
  * @param {number[]} array The array to transpose
  * @returns {number[]} The transposed array
  */
-const arr = [[4,6,5],[7,1,9]];
+const arr = [[4,6,5],[7,1,9=8]];
 
 function transpose(array) {
   const col = array[0].length;
