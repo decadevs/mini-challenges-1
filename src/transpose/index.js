@@ -26,6 +26,7 @@ function transpose(array) {
         }
         Arr_trans.push(arr);
     }
+    //return array transpose;
     return Arr_trans;
 }
 
