@@ -4,6 +4,13 @@
  * @param {number[]} array The array to transpose
  * @returns {number[]} The transposed array
  */
+const arr = [
+    [5, 12, 17, 9, 3],
+    [13, 4, 8, 14, 1],
+    [9, 6, 3, 7, 21]
+  ];
+
+  console.log(transpose(arr));
 function transpose(array) {
     let arr_height = array.length;
     let arr_width = array[0].length;

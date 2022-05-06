@@ -17,13 +17,14 @@ function romanToDecimal(roman) {
 
     // replacing regulars
     r = r.replace(/M/g, "+1000+");
-    r = r.replace(/CD/g, "+500+");
-    r = r.replace(/XC/g, "+100+");
-    r = r.replace(/XL/g, "+50+");
-    r = r.replace(/IX/g, "+10+");
-    r = r.replace(/IV/g, "+5+");
-    r = r.replace(/IV/g, "+1+");
+    r = r.replace(/D/g, "+500+");
+    r = r.replace(/C/g, "+100+");
+    r = r.replace(/L/g, "+50+");
+    r = r.replace(/X/g, "+10+");
+    r = r.replace(/V/g, "+5+");
+    r = r.replace(/I/g, "+1+");
 
+    //console.log(r);
     // replace double +. starting +. ending +
     r = r.replace(/\+\+/g, "+").replace(/^\+/, '').replace(/\+$/, '');
     
@@ -35,6 +36,7 @@ function romanToDecimal(roman) {
 
     
 }
+console.log(romanToDecimal("XCVIII"));
 
 function keep_this(){
     let roman = new Map({
