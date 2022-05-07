@@ -5,30 +5,38 @@
  * @returns {number} The decimal equivalent.
  */
 function romanToDecimal(roman) {
-    let Numerals = {
+    let singleRomanNumerals = {
         M: 1000,
-        CM: 900,
         D: 500,
-        CD: 400,
         C: 100,
-        XC: 90,
         L: 50,
-        XL: 40,
         X: 10,
-        IX: 9,
         V: 5,
-        IV: 4,
         I: 1
+    };
+    let doubleRomanNumerals = {
+        CM: 900,
+        CD: 400,
+        XC: 90,
+        XL: 40,
+        IX: 9,
+        IV: 4,
     };
 
     var decimal = 0;
 
-    //loop through the string
-    for (let l = 0; l < roman.length; l++) {
-        
+    for (let r = 0; r < roman.length; r++) {
+        if (Object.keys(doubleRomanNumerals).includes(`${roman[r] + roman[r + 1]}`)) {
+            decimal += doubleRomanNumerals[`${roman[r] + roman[r + 1]}`];
+            r += 1;
+            continue;
+        } else {
+            decimal += singleRomanNumerals[roman[r]];
+        }
     }
+
 
     return decimal;
 }
-
+console.log(romanToDecimal("CLXVIII"));
 module.exports = romanToDecimal;
