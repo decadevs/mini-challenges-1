@@ -16,88 +16,59 @@ function romanToDecimal(roman)
         D : parseInt('500'),
         M : parseInt('1000')
     };
+    
+    const numberStore = [];
+    // Temporary value holder 
+    const temp = [];
+    for ( let i = 0; i < roman.length; i++){
+        // Iterate over numberKeys
+        for ( let element in numberKeys ){
+            // Check for match
+            if ( roman[i] == element ){
+                temp.push(numberKeys[element]);
+                // Temp with two digits
+                if ( temp.length == 2){
+                    // Test for reduction
+                    if ( temp[0] < temp [1]){
+                        console.log(temp)
+                        // Store difference
+                        let newValue = temp[1] - temp[0];
+                        // Add to number store
+                        numberStore.push(newValue)
+                        // Reset temp
+                        temp.splice(0, 2)
+                        console.log(temp)
 
-
-
-    let arr = roman.split('');
-    let total = 0;
-    for (let i = 0; i < arr.length; i++)
-    {
-        switch(arr[i])
-        {
-            case 'M':
-                if(arr[i - 1] == 'C')
-                {
-                    total = total
+                    }
+                    else{
+                        let newValue = temp[0];
+                        numberStore.push(newValue);
+                        // Reduce temp
+                        temp.splice(0,1);
+                        // Check for last element
+                        if ( i == roman.length - 1){
+                           numberStore.push(temp[0]) 
+                        }
+                    }   
                 }
-                else
-                {
-                    total = total + 1000;
+                // No reduction possible at the last index
+                else if ( (temp.length !== 2) && (i == roman.length - 1)){
+                    // Get temp value
+                    let newValue = temp[0]
+                    // Add to numberArray
+                    numberStore.push(newValue)
                 }
-                
-            case 'D':
-                if(a)
-                total = total + 500;
-            case 'C':
-                if(a)
-                total = total + 100;
-            case 'L':
-                if(a)
-                total = total + 50;
-            case 'X':
-                if(a)
-                total = total + 10;
-            case 'V':
-                if(a)
-                total = total + 5;
-            case 'I':
-                if(a)
-                total = total + 1;
+            }
+
         }
     }
+    let initialValue = 0;
+    // Add values in numberStore
+    let decimal = numberStore.reduce( (previousValue, currentValue)=> previousValue + currentValue, initialValue )
 
+
+return decimal
 }
-
-// const numberKeys = 
-// {
-//     I : parseInt('1'),
-//     V : parseInt('5'),
-//     X : parseInt('10'),
-//     L : parseInt('50'),
-//     C : parseInt('100'),
-//     D : parseInt('500'),
-//     M : parseInt('1000')
-// };
 
 module.exports = romanToDecimal;
 
-
-
-    // let total = 0;
-    // let temp;
-
-    // for(let i = 0; i < roman.length; i++)
-    // {
-    //     let currentNumberIndex = roman.indexOf(roman[i]);
-    //     let succeedingNumberIndex = roman.indexOf(roman[i + 1]);
-    //     total += roman[i];
-    //     for (const numberKey in numberKeys)
-    //     {
-    //         if(roman[currentNumberIndex] == numberKey)
-    //         {
-    //             for (const secondNumberKey in numberKeys)
-    //             {
-    //                 if ((roman[succeedingNumberIndex] == secondNumberKey) && (numberKeys[secondNumberKey] > numberKeys[numberKey]))
-    //                 {
-    //                     total = total - numberKeys[numberKey];
-    //                     total = total + (numberKeys[secondNumberKey] - numberKeys[numberKey]);
-    //                     i = succeedingNumberIndex;
-    //                     continue;
-    //                 } 
-
-    //             }
-    //         }
-    //             // total += roman[i];
-    //     }
-      
-    // }
