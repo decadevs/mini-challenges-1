@@ -9,3 +9,9 @@ While a specific bracket is open, every other enclosed pair of brackets that is 
 For example, `{[()[]]()}()` is valid, but `[(])` is not. Given a string, your function should determine if it is valid or not.
 
 Your function should output `valid`, or `invalid` depending on the given string.
+
+
+
+
+
+
