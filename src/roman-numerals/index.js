@@ -30,15 +30,12 @@ function romanToDecimal(roman)
                 if ( temp.length == 2){
                     // Test for reduction
                     if ( temp[0] < temp [1]){
-                        console.log(temp)
                         // Store difference
                         let newValue = temp[1] - temp[0];
                         // Add to number store
-                        numberStore.push(newValue)
+                        numberStore.push(newValue);
                         // Reset temp
-                        temp.splice(0, 2)
-                        console.log(temp)
-
+                        temp.splice(0, 2);
                     }
                     else{
                         let newValue = temp[0];
@@ -47,16 +44,16 @@ function romanToDecimal(roman)
                         temp.splice(0,1);
                         // Check for last element
                         if ( i == roman.length - 1){
-                           numberStore.push(temp[0]) 
+                           numberStore.push(temp[0]); 
                         }
                     }   
                 }
                 // No reduction possible at the last index
                 else if ( (temp.length !== 2) && (i == roman.length - 1)){
                     // Get temp value
-                    let newValue = temp[0]
+                    let newValue = temp[0];
                     // Add to numberArray
-                    numberStore.push(newValue)
+                    numberStore.push(newValue);
                 }
             }
 
@@ -64,10 +61,10 @@ function romanToDecimal(roman)
     }
     let initialValue = 0;
     // Add values in numberStore
-    let decimal = numberStore.reduce( (previousValue, currentValue)=> previousValue + currentValue, initialValue )
+    let decimal = numberStore.reduce( (previousValue, currentValue)=> previousValue + currentValue, initialValue );
 
 
-return decimal
+return decimal;
 }
 
 module.exports = romanToDecimal;
