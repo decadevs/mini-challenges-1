@@ -7,14 +7,14 @@
 function romanToDecimal(roman) {
   let convert = {I: 1, V: 5, X: 10, L: 50, C: 100, D: 500, M: 1000};
 
-  let arr = roman.toUpperCase().split('');
+  let arr = roman.toUpperCase().split(''); //Ignores user case and splits array
   let decimal = 0;
 
   for (let i = 0; i < arr.length; i++) {
     let current = convert[arr[i]];
     let next = convert[arr[i+1]];
 
-    current < next ? decimal -= current : decimal += current;
+    current < next ? decimal -= current : decimal += current; //Tenary operation
   }
   return decimal;
 }
