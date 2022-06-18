@@ -20,7 +20,7 @@ D is 500
 M is 1,000
 ```
 
-A numeral is formed by a sequence of these symbols, where each symbol can be used up to 3 times to contribute to the total. Symbols are ordered left-to-right from larger to smaller, except for the following cases:
+A numeral is formed by a sequence of these symbols, where each symbol can be used up to 3 times to contribute to the total. Symbols are ordered left-to-right from larger to smaller, except for the following cases: xi ix, 
 
 `I` placed before `V` or `X` indicates one less, so `4` is `IV` (one less than 5) and `9` is `IX` (one less than 10).
 
