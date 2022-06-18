@@ -14,10 +14,10 @@ function romanToDecimal(roman)
   let numeric = 0;
   for (let i = 0; i < roman.length; i++)
   {
-    //check up to penultimate numeral for an increasing order of numerals
+    /* checking up to (n-1)th numeral for a larger numeral after (signifies subtraction)
+    otherwise default to addition*/
     if (i < roman.length - 1 && numerals[roman[i]] < numerals[roman[i + 1]])
     {
-      //order of numerals signifies subtraction. Confirm with known subtractors
       if (negatives.includes(roman[i]))
       {
         numeric -= numerals[roman[i]];
@@ -25,7 +25,6 @@ function romanToDecimal(roman)
     }
     else
     {
-      //default behavior- add corresponding numeric value
       numeric += numerals[roman[i]];
     }
   }

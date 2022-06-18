@@ -14,17 +14,15 @@ function isValid(str)
   {
     if (openers.includes(str[i]))
     {
-      //remember open bracket
       openBounds.push(str[i]);
     }
-    //forget(pop) the last stored open bracket when a closer is found, catch mismatches
+    /* Not just checking for mismatch between closer and corresponding opener-
+    also forgetting the last stored opener via pop() to 'clear' valid brackets */
     else if (closers.includes(str[i]) && brackets[openBounds.pop()] !== str[i])
     {
-      //a closing bracket didn't match the last stored open bracket
       return "invalid";
     }
   }
-  //for brackets to be valid there must be no open brackets
   return openBounds.length > 0 ? "invalid" : "valid";
 }
 
