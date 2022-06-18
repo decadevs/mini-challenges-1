@@ -24,7 +24,6 @@ function romanToDecimal(roman) {
        let num = romanNumeralsDictionary[roman[i]]
         decimal.push(num);
         }
-
         //Loop through array 
         for(let j = 0; j < decimal.length; j++){  
             if(decimal[j] < decimal[j + 1]){ 
