@@ -28,6 +28,6 @@ A numeral is formed by a sequence of these symbols, where each symbol can be use
 
 `C` placed before `D` or `M` indicates a hundred less, so 400 is `CD` (a hundred less than 500) and `900` is `CM` (a hundred less than 1,000)
 
-For example, 11 is `XI`, `98` is `XCVIII`, `99` is `XCIX` and 1944 is `MCMXLIV`.
+For example, `11` is `XI`, `98` is `XCVIII`, `99` is `XCIX` and 1944 is `MCMXLIV`.
 
 [roman-numerals]: https://en.wikipedia.org/wiki/Roman_numerals
