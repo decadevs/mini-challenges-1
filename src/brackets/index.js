@@ -16,6 +16,8 @@ function isValid(param) {
   }
   if (check.length === 0) { //If array length is 0 sequence of brackets is valid
     return "valid";
+  } else {
+    return "invalid";
   }
 }
 
