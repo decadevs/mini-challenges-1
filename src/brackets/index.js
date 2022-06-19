@@ -6,38 +6,15 @@
  */
 
 
-// STACK OVERFLOW
-
-//  syntaxChecker = (str) => {
-//   let arrayStore = [];
-//   // For each char in the string
-//   [...str].forEach(bracket => {
-//     // opened char ? add to the arrayStore
-//     if ('([{'.includes(bracket)){
-//       arrayStore.push(bracket);
-//     }
-//     // closed char ? check if match the last opened
-//     else if (')]}'.includes(bracket)){
-//       let top = arrayStore.pop();
-//       if (! (bracket === ')' && top === '('
-//           || bracket === ']' && top === '['
-//           || bracket === '}' && top === '{')){
-//         arrayStore.push(bracket);
-//       }
-//     }
-//   });
-//   // arrayStore empty = correct
-//   return arrayStore.length === 0;
-// }
 function isValid(str) {
-let leftBracketArr = [];
-let rightBracketArr = [];
+let leftBracketArr = []; //will contain all left brackets
+let rightBracketArr = []; //will contain all right brackets
 for(let i=0; i < str.length; i++){
-  let singleBracket = str[i];
+  let singleBracket = str[i]; //isolate single char in input string
   if(singleBracket === '(' || singleBracket === '[' || singleBracket === '{'){
     leftBracketArr.push(str[i]);
   }
-  let arrLength = leftBracketArr.length - 1;
+  let arrLength = leftBracketArr.length - 1; //gets the first index of half part in a recursive manner
 
   if(singleBracket === ')' || singleBracket === ']' || singleBracket === '}'){
     rightBracketArr.push(str[i]);
@@ -53,11 +30,11 @@ if(leftBracketArr.length == 0 && rightBracketArr.length >0){
 else if(leftBracketArr.length > 0 && rightBracketArr.length == 0){
   return 'invalid';
 }
-else if(leftBracketArr.length == 0 && rightBracketArr.length == 0){
-  return 'valid';
-}
 else if(leftBracketArr.length > 0 && rightBracketArr.length > 0){
   return 'invalid';
+}
+else if(leftBracketArr.length == 0 && rightBracketArr.length == 0){
+  return 'valid';
 }
 
 }
