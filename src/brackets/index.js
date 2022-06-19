@@ -20,5 +20,5 @@
    
  }
 
-console.log(isValid("(([)])]"));
+isValid("(([)])]");
  module.exports = isValid;
