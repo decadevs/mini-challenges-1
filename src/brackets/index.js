@@ -41,6 +41,7 @@ function isValid(str) {
           return 'invalid';
         }
       }
+  }
 
   // Check Empty Stack
   if (stack.length == 0) {
