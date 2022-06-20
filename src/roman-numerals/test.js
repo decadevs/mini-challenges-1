@@ -1,4 +1,4 @@
-const romanToDecimal = require("./");
+const romanToDecimal = require("./index.js");
 
 describe("Roman to Numerals solution", () => {
   test("It passes the basics", () => {

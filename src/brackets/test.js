@@ -1,4 +1,4 @@
-const isValid = require("./");
+const isValid = require("./index.js");
 
 describe("Brackets Suite", () => {
   test("Single Character - valid inputs", () => {
