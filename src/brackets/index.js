@@ -24,17 +24,12 @@ for(let i=0; i < str.length; i++){
     }
   }
 }
-if(leftBracketArr.length == 0 && rightBracketArr.length >0){
-  return 'invalid';
-}
-else if(leftBracketArr.length > 0 && rightBracketArr.length == 0){
-  return 'invalid';
-}
-else if(leftBracketArr.length > 0 && rightBracketArr.length > 0){
-  return 'invalid';
-}
-else if(leftBracketArr.length == 0 && rightBracketArr.length == 0){
+ if(leftBracketArr.length == 0 && rightBracketArr.length == 0){
   return 'valid';
+}
+else{
+  return 'invalid';
+
 }
 
 }
