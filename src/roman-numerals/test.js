@@ -1,4 +1,4 @@
-const romanToDecimal = require("./");
+const romanToDecimal = require("./"); //Add index after the slash
 
 describe("Roman to Numerals solution", () => {
   test("It passes the basics", () => {
