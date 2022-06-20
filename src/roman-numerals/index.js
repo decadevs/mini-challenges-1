@@ -16,18 +16,18 @@
   }
   let total = 0;
   for(i = 0; i < roman.length; i++) {
-      let firRom = romanToDecimal[roman.charAt(i)];
+      let firstRoman = romanToDecimal[roman.charAt(i)];
       let secRom = romanToDecimal[roman.charAt(i + 1)];
 
       if(secRom) {
-          if(firRom >= secRom) {
-              total += firRom;
+          if(firstRoman >= secRom) {
+              total += firstRoman;
           } else {
-              total += (secRom - firRom);
+              total += (secRom - firstRoman);
               i++;
           }
       } else {
-          total += firRom;
+          total += firstRoman;
       }
   }
       return total;
