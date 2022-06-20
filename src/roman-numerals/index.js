@@ -19,10 +19,10 @@ function romanToDecimal(roman) {
 
   for (let i = 0; i < roman.length; i++) {
     if (data[roman[i]] < data[roman[i + 1]]) {
-      total += roman[i + 1] - roman[i];
+      total += data[roman[i + 1]] - data[roman[i]];
       i++;
     } else {
-      total += roman[i];
+      total += data[roman[i]];
     }
   }
   return total;

@@ -25,26 +25,22 @@ function isValid(str) {
           return "invalid";
 
       let check;
-      switch (x){
-      case ')':
-          check = stack.pop();
-          if (check == '{' || check == '[')
-              return "invalid";
-          break;
-
-      case '}':
-          check = stack.pop();
-          if (check == '(' || check == '[')
-              return "invalid";
-          break;
-
-      case ']':
-          check = stack.pop();
-          if (check == '(' || check == '{')
-              return "invalid";
-          break;
+      if (x == ')') {
+        check = stack.pop();
+        if (check == '{' || check == '['){
+          return 'invalid';
+        }
+      } else if (x == '}'){
+        check = stack.pop();
+        if (check == '(' || check == '[') {
+          return 'invalid';
+        }
+      } else if (x == ']') {
+        check = stack.pop();
+        if (check == '(' || check == '{'){
+          return 'invalid';
+        }
       }
-  }
 
   // Check Empty Stack
   if (stack.length == 0) {
