@@ -5,35 +5,37 @@
  * @returns {number} The decimal equivalent.
  */
 function romanToDecimal(roman) {
-    // const converter = {
-    //     M: 1000,
-    //     CM: 900,
-    //     D: 500,
-    //     CD: 400,
-    //     C: 100,
-    //     XC: 90,
-    //     L: 50,
-    //     XL: 40,
-    //     X: 10,
-    //     IX: 9,
-    //     V: 5,
-    //     IV: 4,
-    //     I: 1,
-    // }
-    // let number = ''
-
-    for (let key in converter){
-        //console.log(key)
-        //console.log(converter[key])
-        while(roman >= converter[key]){
-            number += key;
-            roman -= converter[key];
-        }
-    }
-    return number
-
     
+  let result = 0
+  let i = 0
+
+  const converter = {
+    I: 1,
+    V: 5,
+    X: 10,
+    L: 50,
+    C: 100,
+    D: 500,
+    M: 1000,
+  }
+
+  while (i < roman.length) {
+
+    let firstChar = roman[i]
+    let secondChar = roman[i + 1]
+    if(converter[firstChar] < converter[secondChar]) { 
+     result += converter[secondChar] - converter[firstChar]
+      i += 2
+    } else {
+      result += converter[firstChar]
+      i++
+    }
+  }
+
+  return result
 }
-console.log(romanToDecimal(14))
+
+console.log(romanToDecimal("MMCDXLIX"))
+
 
 module.exports = romanToDecimal;
