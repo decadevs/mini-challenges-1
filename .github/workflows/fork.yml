@@ -7,12 +7,12 @@ jobs:
     name: Create Branch
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/github-script@0.9.0
+      - uses: actions/github-script@v6
         with:
           github-token: ${{secrets.GITHUB_TOKEN}}
           script: |
             const creator = context.actor
-            await github.git.createRef({
+            await github.rest.git.createRef({
               owner: context.repo.owner,
               repo: context.repo.repo,
               ref: `refs/heads/${creator}`,
