@@ -11,7 +11,7 @@
         "{": "}",
     };
 
-    let bracketArray = []; 
+    const bracketArray = []; 
     //lookup closing brackets in object and compare
     for (let i = 0; i < str.length; i++) {
         if (brackets[str[i]]) {
