@@ -7,7 +7,8 @@
 function isValid(str)
 {
   const brackets = { '(': ')', '[': ']', '{': '}' };
-  const openers = Object.keys(brackets), closers = Object.values(brackets);
+  const openers = Object.keys(brackets);
+  const closers = Object.values(brackets);
 
   let openBounds = [];
   for (let i = 0; i < str.length; i++)

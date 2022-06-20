@@ -7,8 +7,10 @@
 function transpose(array)
 {
   //column count from array row count and row count from array column count
-  let cols = array.length, rows = array[0].length;
-  let transposed = [], buffer = [];
+  const cols = array.length;
+  const rows = array[0].length;
+  const transposed = [];
+  let buffer = [];
   for (let i = 0; i < rows; i++)
   {
     for (let j = 0; j < cols; j++)
