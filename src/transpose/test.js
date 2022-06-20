@@ -1,4 +1,4 @@
-const transpose = require("./");
+const transpose = require("./index");
 
 describe("Transposed Array", () => {
   test("Testing with 2x2 array", () => {
