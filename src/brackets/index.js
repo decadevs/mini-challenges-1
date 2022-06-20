@@ -5,25 +5,23 @@
  * @returns {"valid" | "invalid"} Whether or not the string is valid.
  */
 function isValid(str){
-    brackets = '(){}[]';
-    const strArr = str.split('')
-    let count = 0;
-    for(let i = 0; i < str.length; i++){
-        if(strArr[i] === '(' || strArr[i] === '[' || strArr === '{'){
-            count++
-        }else if(strArr[i] === ')' || strArr[i] === ']' || strArr === '}' ){
-            count--;
-        }
-        if(count < 0){
-            return 'invalid'
+    const brackets = '(){}[]'. split('');
+    // console.log(brackets)
+    let output = [];
+    for(let bracket of str){
+        let index = brackets.indexOf(bracket);
+        if(index % 2 == 0){
+            output.push(index+1);
+
+        }else{
+            if(output.pop() !== index){
+                return 'invalid';
+            }
         }
     }
-    if(count === 0){
-        return 'valid'
-    }
-    return 'invalid';
-    
+
+    return output.length == 0 ? 'valid' : 'invalid';
 }
 
- console.log(isValid('[{[][]}]'));
-module.exports = isValid;
+  console.log(isValid('({})'));
+ module.exports = isValid;

@@ -9,13 +9,13 @@ function transpose(array){
     for(let i =0; i < array[0].length; i++){
     tempArr[i] = [];
     }
-    for(let i = 0; i < array.length; i++){
-        for(let j = 0; j < array[0].length; j++){
+        for(let i = 0; i < array.length; i++){
+            for(let j = 0; j < array[0].length; j++){
 
-            tempArr[j][i] = array[i][j];
+                tempArr[j][i] = array[i][j];
+            }
         }
-    }
-    return tempArr;
+        return tempArr;
 }        
     
 
