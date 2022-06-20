@@ -22,7 +22,7 @@ describe("Roman to Numerals solution", () => {
     expect(romanToDecimal("IV")).toBe(4);
     expect(romanToDecimal("IX")).toBe(9);
   });
-
+-
   test("Additions with I", () => {
     expect(romanToDecimal("III")).toBe(3);
     expect(romanToDecimal("VI")).toBe(6);
