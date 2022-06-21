@@ -5,30 +5,20 @@
  * @returns {number} The decimal equivalent.
  */
 function romanToDecimal(roman) {
-  roman = roman.toUpperCase();
-  const romanVal = {I:1,V:5,X:10,L:50,C:100,D:500,M:1000}; //object to store the defined keys and values
-  let romanNum = [];
-  let tempval =0;
-  for(let i=0; i<roman.length; i++){
-    romanNum.push(romanVal[roman[i]]) //
-  }
-  let result = roman[0];
-  for(let i=0; i, romanNum.length; i++){
-    tempval = romanNum[i+1];
-    if(result >= tempval){
-      if(romanNum[i] >= tempval){
-        result +=  tempval;
-      }
-      else if(romanNum[i] < tempval){
-        let tempResult = tempval - romanNum[i];
-        result -= romanNum[i];
-        result += tempResult;
-      }
-    }
-    else if(result , tempval){
-      result = tempval - result;
-    }
+  let rom_int = { M: 1000, D: 500, C: 100, L: 50, X: 10, V: 5, I: 1 };
+  let result = 0;
+  let values = roman
+    .toUpperCase()
+    .split("")
+    .map((el) => rom_int[el]);
 
+  for (let index = 0; index < values.length; index++) {
+    if (values[index] < values[index + 1]) {
+      result += values[index + 1] - values[index];
+      index++;
+    } else {
+      result += values[index];
+    }
   }
   return result;
 
