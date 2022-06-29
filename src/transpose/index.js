@@ -16,10 +16,5 @@ function transpose(array) {
         }
     }return result
 }
-const arr = [
-    [9, 2, 3],
-    [3, 4, 5],
 
-  ];
-transpose(arr)
 module.exports = transpose;

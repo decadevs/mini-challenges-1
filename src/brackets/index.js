@@ -9,14 +9,13 @@ function isValid(str) {
     const openBrackets = ['[','{','('];
     const closeBrackets = [']','}',')'];
     
-    let stack = [];
+    const stack = [];
     
     for(let i = 0; i < str.length; i++){
         if(str[0] == closeBrackets.includes(str[0]) || str.length % 2 !== 0){
-           return('invalid')
-            
+           return('invalid') 
         }
-        if(closeBrackets.includes(str[str.length - 1]) == false){
+        if(closeBrackets.includes(str[str.length - 1]) === false){
             return ('invalid')
         }
        if(openBrackets.includes(str[i])){
@@ -29,8 +28,6 @@ function isValid(str) {
             }
        }
     } return ('valid')
-
 }
 
-isValid('{{}');
 module.exports = isValid;

@@ -32,9 +32,8 @@ function romanToDecimal(roman) {
             }
                 sum = sum + decimal[j]
         }
-        result = (negative != null)?  sum + negative : sum
+        result = (negative !== null)?  sum + negative : sum
         return result
     }
-        
-    romanToDecimal('XCIV')
+   
     module.exports = romanToDecimal;
