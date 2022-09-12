@@ -28,7 +28,7 @@ function isValid(str) {
                 (char=='}' && last != '{') ||
                 (char==']' && last != '[')
             ){
-                valid = "invalid"
+                valid = "invalid";
             }
         }
         break;

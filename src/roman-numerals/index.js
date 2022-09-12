@@ -26,7 +26,7 @@ function conversion(rom) {
 function romanToDecimal(roman){
 
     let result = 0;
-    for (let i = 0; i < roman.length; i++){
+    for (let i = 0; i<roman.length; i++){
         //get the value for roman symbol [i]
         let str1 = conversion(roman.charAt(i));
         //get the value for roman symbol [i]+1
