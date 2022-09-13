@@ -37,7 +37,7 @@ function romanToDecimal(roman) {
   i++;
 }else if(roman[i] == "C" && roman[i+1] == "M"){
   answer += 900;
-  i++;
+  i++
 }else {
   answer += conversion[roman[i]];
 }
