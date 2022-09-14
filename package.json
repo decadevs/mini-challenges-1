@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "Lab 0 - challenges",
   "main": "jest",
+  
   "scripts": {
+    "start": "node index.js",
     "test": "jest",
     "prepare": "husky install"
   },
