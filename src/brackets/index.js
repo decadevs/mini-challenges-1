@@ -5,16 +5,14 @@
  * @returns {"valid" | "invalid"} Whether or not the string is valid.
  */
  function isValid(str) {
-    // code me
+    // my code here
     let stack = [];
     let map = {
         '(': ')',
         '[': ']',
         '{': '}'
     }
-    
-module.exports = isValid;
- 
+
     for (let i = 0; i < str.length; i++) {
         if (str[i] === '(' || str[i] === '[' || str[i] === '{') {
             stack.push(str[i]);
@@ -38,4 +36,3 @@ module.exports = isValid;
     console.log(isValid("()[]{}"));
     console.log(isValid("(]"));
  module.exports = isValid;
- 
