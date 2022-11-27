@@ -10,10 +10,6 @@ function isValid(str) {
     let parenthesesCounter = 0;
     let curlyBracCounter = 0;
 
-    let arrayLength = myArray.length - 1;
-
-    if (myArray[0] === "(" && myArray[arrayLength] === ")" || myArray[0] === "{" && myArray[arrayLength] === "}" || myArray[0] === "[" && myArray[arrayLength] === "]"){
-      // validate if the expression is logical or illogical
         for (let i = 0; i < myArray.length; i++) {
             const e = myArray[i];
             if (e === "(") {
@@ -35,9 +31,6 @@ function isValid(str) {
         } else {
           return 'invalid' ;
         }
-    } else {
-      return 'invalid' ;
-    }
 }
 
 module.exports = isValid;
