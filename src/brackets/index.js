@@ -31,12 +31,12 @@ function isValid(str) {
             }
         }
         if (parenthesesCounter === 0 && squareBracCounter === 0 && curlyBracCounter ===0 ) {
-            console.log("valid");
+            return "valid" ;
         } else {
-            console.log("invalid");
+          return 'invalid' ;
         }
     } else {
-        console.log("invalid");
+      return 'invalid' ;
     }
 }
 
