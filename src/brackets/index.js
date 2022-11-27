@@ -5,6 +5,7 @@
  * @returns {"valid" | "invalid"} Whether or not the string is valid.
  */
 function isValid(str) {
+  
     const myArray = str.split("");
     let squareBracCounter = 0;
     let parenthesesCounter = 0;
