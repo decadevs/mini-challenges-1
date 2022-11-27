@@ -16,8 +16,6 @@ function transpose(array) {
       newArr[j].push(array[i][j]);
     }
   }
-
-
   return newArr;
 }
 
