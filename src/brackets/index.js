@@ -14,6 +14,7 @@ syntaxChecker = (str) => {
   [...str]. forEach(c => {
     if ('([{'.includes(c)){
       stack.push(c);
+
     }
     else if (')]}'.includes(c)){
       let top = stack.pop();
