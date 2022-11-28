@@ -15,9 +15,13 @@ function romanToDecimal(roman) {
     M : 1000
   }
 
+  // defining major characters for ref purpose
+
   let dec = 0;
 
   let romanSplit = roman.split("")
+
+
 
   romanSplit.forEach((dig, i) => {
     if(order[dig] < order[romanSplit[i+1]]){
@@ -29,7 +33,7 @@ function romanToDecimal(roman) {
   return dec;
 }
 
-console.log(romanToDecimal("MIV"))
+console.log(romanToDecimal("IV"))
 
 module.exports = romanToDecimal;
 
