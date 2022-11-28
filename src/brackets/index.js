@@ -22,11 +22,13 @@
         }
         
     }
-    if(!str.length == false){
+    //console.log(arr)
+    if(!arr.length == false){
         return 'invalid'
     };
     return 'valid';
 }
 
 module.exports = isValid;
-//console.log(isValid('{('))
+//console.log(isValid('[[[[[]]]]]'))
+//console.log(!0)
