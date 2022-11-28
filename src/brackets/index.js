@@ -6,6 +6,7 @@
  */
  function isValid(str) {
     var arr = [];
+    var output = '';
     if (str.length % 2 !== 0) {
         return "invalid";
     }
@@ -21,7 +22,11 @@
         }
         
     }
+    if(!str.length == false){
+        return 'invalid'
+    };
     return 'valid';
 }
 
 module.exports = isValid;
+console.log(isValid('{('))
