@@ -9,7 +9,7 @@ function transpose(array) {
         return [];
     }
     let w = array[0].length; 
-    let h = array.length;
+    let h = array.length
     let result = [];
     for(let i = 0; i < w; i++){
         result[i] = [];

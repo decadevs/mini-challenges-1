@@ -25,6 +25,5 @@ function romanToDecimal(roman) {
     }
     return result
 }
-romanToDecimal("XI")
 
 module.exports = romanToDecimal;

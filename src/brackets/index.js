@@ -20,7 +20,5 @@ function isValid(str) {
     }
     return arr.length ? "invalid" : "valid"
 }
-isValid('{[()[]]()}()')
-
 
 module.exports = isValid;
