@@ -3,13 +3,13 @@ const isValid = require("./");
 describe("Brackets Suite", () => {
   test("Single Character - valid inputs", () => {
     expect(isValid("()")).toBe("valid");
-    expect(isValid("[]")).toBe("valid");
+    expect(isValid("[]")).toBe("valid"); //1
     expect(isValid("{}")).toBe("valid");
   });
 
   test("Multiple Characters - invalid inputs", () => {
     expect(isValid("(}")).toBe("invalid");
-    expect(isValid("{(")).toBe("invalid");
+    expect(isValid("{(")).toBe("invalid"); //2
     expect(isValid("]]")).toBe("invalid");
     expect(isValid("{)")).toBe("invalid");
   });
@@ -20,7 +20,7 @@ describe("Brackets Suite", () => {
     expect(isValid("()()()()()")).toBe("valid");
     expect(isValid("((())(())(())(()))")).toBe("valid");
 
-    expect(isValid("[[]]")).toBe("valid");
+    expect(isValid("[[]]")).toBe("valid"); //3
     expect(isValid("[][][[]]")).toBe("valid");
     expect(isValid("[][[[]]]")).toBe("valid");
     expect(isValid("[[[[[]]]]]")).toBe("valid");
@@ -43,7 +43,7 @@ describe("Brackets Suite", () => {
   });
 
   test("Complex chracters - valid", () => {
-    expect(isValid("{[()[]]()}()")).toBe("valid");
+    expect(isValid("{[()[]]()}()")).toBe("valid"); //4
     expect(isValid("{{{(())}}[[()]]}")).toBe("valid");
     expect(isValid("[{()}({[]})(){}[]]")).toBe("valid");
     expect(isValid("(){}[](([][]){})")).toBe("valid");
