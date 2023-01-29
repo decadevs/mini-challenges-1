@@ -18,7 +18,7 @@ function isValid(str) {
             case "[":
                 arr.push("]") 
             default:
-                if(character !== arr.pop()){
+                if(character !== arr.pop() || character==arr.pop()){
                     return "invalid"
                 }
         }

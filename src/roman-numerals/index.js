@@ -11,8 +11,6 @@ function romanToDecimal(roman) {
     for(let i=0; i<splittedString.length; i++){
       if(romanNum[splittedString[i]] < romanNum[splittedString[i+1]]){
         count -= romanNum[splittedString[i]]
-  
-        console.log(romanNum[splittedString[i]]);
       }else{
         count += romanNum[splittedString[i]]
       }
