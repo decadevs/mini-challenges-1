@@ -14,7 +14,7 @@ if(str[i] === "(" || str[i] === "[" || str[i] === "{"){
     return "invalid";
 }
         }
-    return arr.length > 0 ? "invalid" : "valid"
+    return arr.length > 0 ? "invalid" : "valid";
 }
 
 module.exports = isValid;
