@@ -7,14 +7,23 @@
 function transpose(array) {
 
     let newArr = []
+    let length = ''
+    let length2 = ''
   for (let i = 0; i < array.length; i++) {
-    for (let j = 0; j < array[0].length; j++) {
-        newArr.push(array[i][j])
+    length = array[i]
+    for (let j = 0; j < array[i].length ; j++) {
+      length2 = array[j]
+        newArr.push(length2[i])
         
     }
     
   }
-return newArr
+  let size = length.length; let arrayOfArrays = [];
+for (var k=0; k<newArr.length; k+=size) {
+     arrayOfArrays.push(newArr.slice(k,k+size));
+}
+
+return arrayOfArrays
 }
 
 let a = [
