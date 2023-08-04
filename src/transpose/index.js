@@ -4,6 +4,8 @@
  * @param {number[]} array The array to transpose
  * @returns {number[]} The transposed array
  */
-function transpose(array) {}
+function transpose(array) {
+    const newArr = []
+}
 
 module.exports = transpose;
