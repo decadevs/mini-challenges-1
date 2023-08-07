@@ -4,18 +4,18 @@
  * @param {string} roman The all-caps Roman numeral between 1 and 3999 (inclusive).
  * @returns {number} The decimal equivalent.
  */
-function romanToDecimal(roman) {
+function romanToDecimal(roman:string) {
     
-    const romanNumerial = {'I' : 1, 'V' : 5, 'X' : 10, 'L' : 50, 'C' : 100, 'D' : 500, 'M' : 1000}
+    const romanNumerial: any = {'I' : 1, 'V' : 5, 'X' : 10, 'L' : 50, 'C' : 100, 'D' : 500, 'M' : 1000}
     
-    let lastStrIndex = roman.length - 1
-    let decimal = romanNumerial[roman[lastStrIndex]];
+    let lastStrIndex: number = roman.length - 1
+    let decimal: any = romanNumerial[roman[lastStrIndex]];
 
     // Looping from back
     for(let i = lastStrIndex; i >= 0; i--){
 
-        let current = romanNumerial[roman[i]];
-        let next = romanNumerial[roman[i - 1]];
+        let current: any = romanNumerial[roman[i]];
+        let next:any = romanNumerial[roman[i - 1]];
 
         if( next >= current){
             decimal += next;

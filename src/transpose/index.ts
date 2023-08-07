@@ -4,8 +4,9 @@
  * @param {number[]} array The array to transpose
  * @returns {number[]} The transposed array
  */
-function transpose(array) {
-    const newArr = [];
+function transpose(array: number[][]) {
+
+    const newArr: number[][] = [];
 
     for(let i = 0; i < array[0].length; i++){
         newArr.push([]);
