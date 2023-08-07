@@ -9,27 +9,13 @@ function romanToDecimal(roman) {
     let total = 0
     for (let i in roman){
         let num = 0
-        if(roman[i] == 'I'){
-            num = 1
-        }
-        else if(roman[i] == 'V'){
-            num = 5
-        }
-        else if(roman[i] == 'X'){
-            num = 10
-        }
-        else if(roman[i] == 'L'){
-            num = 50
-        }
-        else if(roman[i] == 'C'){
-            num = 100
-        }
-        else if(roman[i] == 'D'){
-            num = 500
-        }
-        else if(roman[i] == 'M'){
-            num = 1000
-        }
+        if(roman[i] == 'I'){num = 1}
+        else if(roman[i] == 'V'){num = 5}
+        else if(roman[i] == 'X'){num = 10}
+        else if(roman[i] == 'L'){num = 50}
+        else if(roman[i] == 'C'){num = 100}
+        else if(roman[i] == 'D'){num = 500}
+        else if(roman[i] == 'M'){num = 1000}
         let x = stack.length - 1
         if(stack.length == 0){
             total += num
@@ -48,5 +34,6 @@ function romanToDecimal(roman) {
     }
     return total
 }
+
 
 module.exports = romanToDecimal;
