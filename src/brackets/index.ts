@@ -4,8 +4,9 @@
  * @param {string} str The string of brackets.
  * @returns {"valid" | "invalid"} Whether or not the string is valid.
  */
-function isValid(str) {
-    const openBrackets = [];
+function isValid(str : string) {
+    
+    const openBrackets : string[] = [];
 
     if(str.charAt(0) == '}' || str.charAt(0) == ')' || str.charAt(0) == ']'){
         return 'invalid';
@@ -15,7 +16,7 @@ function isValid(str) {
                 openBrackets.push(bracket);
             }
  
-            let lastElement = openBrackets.slice(-1);
+            let lastElement = openBrackets[openBrackets.length - 1];
 
             if(bracket == '}' && lastElement == '{'){
                 openBrackets.pop();
