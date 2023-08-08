@@ -13,7 +13,7 @@ function isValid(str) {
 
         if ( x == '[' || x == '{' || x == '(') {
             stack.push(x);
-            continue;
+              continue;
         }
 
             if (stack.length === 0 )
@@ -21,13 +21,13 @@ function isValid(str) {
 
         const poppedELEMENT = stack.pop();
         if (x == ']' && poppedELEMENT != '['){
-          return "invalid"
+           return "invalid"
         }
         if (x == '}' && poppedELEMENT != '{') {
-          return "invalid"
-        }
+            return "invalid"
+        };
         if (x == ')' && poppedELEMENT != '(') {
-          return "invalid"
+            return "invalid"
         };
 
 

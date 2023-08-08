@@ -24,13 +24,14 @@ function romanToDecimal(roman) {
 
       if(nextSym && nextSym > curSym){
           result += nextSym  - curSym
-          i++
-      } else {
+           i++
+      }
+       else {
           result += curSym
     };
   };
-  return result
-}
+    return result
+};
 
 module.exports = romanToDecimal;
 
