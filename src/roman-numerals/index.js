@@ -17,8 +17,8 @@ function romanToDecimal(roman) {
       D: 500,
       M: 1000,
   };
-  let result = 0
-  for(let i = 0; i < roman.length; i++) {
+  let result = 0;
+    for(let i = 0; i < roman.length; i++) {
       let curSym = numeral[roman[i]]
       let nextSym = numeral[roman[i + 1]]
 
@@ -27,10 +27,10 @@ function romanToDecimal(roman) {
           i++
       } else {
           result += curSym
-      };
+    };
   };
   return result
-};
+}
 
 module.exports = romanToDecimal;
 

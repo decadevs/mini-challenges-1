@@ -17,7 +17,7 @@ function isValid(str) {
         }
 
             if (stack.length === 0 )
-            return "invalid"
+              return "invalid"
 
         const poppedELEMENT = stack.pop();
         if (x == ']' && poppedELEMENT != '['){
@@ -28,10 +28,10 @@ function isValid(str) {
         }
         if (x == ')' && poppedELEMENT != '(') {
           return "invalid"
-        }
+        };
 
 
-    }
+    };
 
     return stack.length === 0 ? "valid" : "invalid"
 };
