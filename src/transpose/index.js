@@ -6,5 +6,5 @@
  */
 function transpose(array) {
   return array[0].map((item, index) => array.map((cur) => cur[index]))
-}
+};
 module.exports = transpose;

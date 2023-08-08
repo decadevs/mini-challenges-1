@@ -27,10 +27,10 @@ function romanToDecimal(roman) {
           i++
       } else {
           result += curSym
-      }
+      };
   };
   return result
-}
+};
 
 module.exports = romanToDecimal;
 
