@@ -22,10 +22,10 @@ function isValid(str) {
         if (result !== correctClosingBracket) {
             return invalid;
         }
-    }
+    };
 
     return validBrackets.length === 0;
 
-}
+};
 
 module.exports = isValid;

@@ -16,9 +16,9 @@ function transpose(array) {
         for (let a = 0; a < columns; a++) {
             transposedArray[a][i] = array[i][a] 
         }
-    }
+    };
         return transposedArray;
-}
+};
 
 
 module.exports = transpose;

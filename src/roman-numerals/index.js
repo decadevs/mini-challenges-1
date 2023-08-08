@@ -20,9 +20,9 @@ function romanToDecimal(roman) {
         } else {
           decimalNumbers += firstLetter;
         }
-      }
+      };
     
       return decimalNumbers;
-}
+};
 
 module.exports = romanToDecimal;
